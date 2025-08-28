@@ -1,4 +1,14 @@
 import React from "react";
+import TeamImage from "../assets/images/team group.png";
+import TeamImage from "../assets/images/team group 2.png";
+import TeamImage from "../assets/images/team-member(2).png";
+import TeamImage from "../assets/images/team-member(3).png";
+import TeamImage from "../assets/images/team-member(4).png";
+import TeamImage from "../assets/images/team-member(5).png";
+import TeamImage from "../assets/images/team-member(6).png";
+import TeamImage from "../assets/images/team-member(7).png";
+
+
 
 const members = [
   {
@@ -66,47 +76,72 @@ const SobreNosotros = () => {
           </div>
         </div>
       </div>
-      <div className="p-5 "> <h1>Conoce a Nuestro Equipo 👥</h1>
+      <div className="p-5 ">
+        {" "}
+        <h1>Conoce a Nuestro Equipo 👥</h1> <img src={TeamImage} alt="" />
         <p>
-           Detrás de cada píxel y cada interfaz de
-          usuario, hay una mente creativa que da vida a nuestra plataforma. Nos
-          enorgullece presentar al equipo que hace que esta visión sea una
-          realidad:</p>
-          <h2>Felipe Marrone:</h2>  <p>Como Arquitecto de Sistemas, Felipe se
-          asegura de que nuestra plataforma sea tan robusta y fluida como los
-          juegos que albergamos. Es el guardián de la estabilidad, el cerebro
-          que diseña la infraestructura para que los servidores nunca caigan,
-          incluso en los lanzamientos más esperados. </p>
-          <h2>Facundo Mamaní:</h2> <p>Nuestro
-          Diseñador de Experiencia de Usuario (UX), Facundo, es el artista
-          detrás de cada clic y cada menú. Su enfoque está en la intuición y la
-          simplicidad, garantizando que la navegación por la plataforma sea tan
-          natural y emocionante como explorar un nuevo mapa en un videojuego.
-          </p><h2>Sara Robles:</h2> <p>Jefa de Producto y Estrategia, Sara es la brújula del
-          equipo. Con su visión de mercado, guía nuestro desarrollo para que
-          siempre estemos un paso por delante, identificando las necesidades de
-          la comunidad y asegurando que cada nueva funcionalidad se alinee con
-          nuestra misión.</p> <h2>Damián Osores:</h2> <p> Con un rol crucial como Desarrollador
-          Full-Stack  es el puente entre el front-end y el back-end.
-          Trabaja incansablemente para que todo lo que ves y todo lo que sucede
-          detrás de escena funcione en perfecta armonía. Es el ingeniero que
-          convierte las ideas en código funcional. </p><h2>Melisa Jiménez:</h2> <p> Nuestra
-          Community Manager, Melisa, es la voz del equipo y el corazón de la
-          comunidad. Con su energía y dedicación, fomenta el diálogo con los
-          jugadores, organiza eventos y se asegura de que cada persona se sienta
-          escuchada y valorada en nuestra plataforma. </p> <h2>Amelia Antoni:</h2> <p> Como
-          Analista de Datos, Amelia es la detective del equipo. Utiliza la
+          Detrás de cada píxel y cada interfaz de usuario, hay una mente
+          creativa que da vida a nuestra plataforma. Nos enorgullece presentar
+          al equipo que hace que esta visión sea una realidad:
+        </p>
+        <h2>Felipe Marrone:</h2>{" "}
+        <p>
+          Como Arquitecto de Sistemas, Felipe se asegura de que nuestra
+          plataforma sea tan robusta y fluida como los juegos que albergamos. Es
+          el guardián de la estabilidad, el cerebro que diseña la
+          infraestructura para que los servidores nunca caigan, incluso en los
+          lanzamientos más esperados.{" "}
+        </p>
+        <h2>Facundo Mamaní:</h2>{" "}
+        <p>
+          Nuestro Diseñador de Experiencia de Usuario (UX), Facundo, es el
+          artista detrás de cada clic y cada menú. Su enfoque está en la
+          intuición y la simplicidad, garantizando que la navegación por la
+          plataforma sea tan natural y emocionante como explorar un nuevo mapa
+          en un videojuego.
+        </p>
+        <h2>Sara Robles:</h2>{" "}
+        <p>
+          Jefa de Producto y Estrategia, Sara es la brújula del equipo. Con su
+          visión de mercado, guía nuestro desarrollo para que siempre estemos un
+          paso por delante, identificando las necesidades de la comunidad y
+          asegurando que cada nueva funcionalidad se alinee con nuestra misión.
+        </p>{" "}
+        <h2>Damián Osores:</h2>{" "}
+        <p>
+          {" "}
+          Con un rol crucial como Desarrollador Full-Stack es el puente entre el
+          front-end y el back-end. Trabaja incansablemente para que todo lo que
+          ves y todo lo que sucede detrás de escena funcione en perfecta
+          armonía. Es el ingeniero que convierte las ideas en código funcional.{" "}
+        </p>
+        <h2>Melisa Jiménez:</h2>{" "}
+        <p>
+          {" "}
+          Nuestra Community Manager, Melisa, es la voz del equipo y el corazón
+          de la comunidad. Con su energía y dedicación, fomenta el diálogo con
+          los jugadores, organiza eventos y se asegura de que cada persona se
+          sienta escuchada y valorada en nuestra plataforma.{" "}
+        </p>{" "}
+        <h2>Amelia Antoni:</h2>{" "}
+        <p>
+          {" "}
+          Como Analista de Datos, Amelia es la detective del equipo. Utiliza la
           información para entender el comportamiento de los usuarios,
           ayudándonos a tomar decisiones informadas sobre qué juegos recomendar
           y cómo mejorar la plataforma para ofrecer una experiencia más
-          personalizada.</p> <h2>Nuestro Compromiso 🤝 </h2> <p>Creemos en el poder de los
-          videojuegos para inspirar, conectar y entretener. Nos comprometemos a
-          mantener nuestra plataforma como un lugar seguro, justo y lleno de
-          oportunidades tanto para jugadores como para desarrolladores. Gracias
-          por ser parte de este viaje y por ayudarnos a dar forma al futuro de
-          los videojuegos. Esperamos que este texto te sea de gran ayuda para
-          darle una identidad y un propósito a la página de tu equipo. ¿Qué te
-          parece este contenido para el proyecto?
+          personalizada.
+        </p>{" "}
+        <h2>Nuestro Compromiso 🤝 </h2>{" "}
+        <p>
+          Creemos en el poder de los videojuegos para inspirar, conectar y
+          entretener. Nos comprometemos a mantener nuestra plataforma como un
+          lugar seguro, justo y lleno de oportunidades tanto para jugadores como
+          para desarrolladores. Gracias por ser parte de este viaje y por
+          ayudarnos a dar forma al futuro de los videojuegos. Esperamos que este
+          texto te sea de gran ayuda para darle una identidad y un propósito a
+          la página de tu equipo. ¿Qué te parece este contenido para el
+          proyecto?
         </p>
       </div>
     </div>

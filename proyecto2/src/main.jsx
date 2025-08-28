@@ -18,7 +18,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// Renderiza la aplicación usando el RouterProvider
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
