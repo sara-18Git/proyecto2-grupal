@@ -1,0 +1,31 @@
+.my-icon {
+    margin-right: 25px;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.my-icon:hover {
+
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    margin-right: 12px;
+}
+
+.error-page {
+    color: rgb(208, 124, 27);
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 5vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(11, 103, 23, 0.3);
+    padding: 8rem;
+    border-radius: 12px;
+    background-color: rgba(208, 216, 159, 0.8);
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-navbar {
+  background-color: #2a6477 !important;
+}
