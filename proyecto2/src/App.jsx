@@ -1,19 +1,15 @@
-/* import Header from "./components/Header";
-import Footer from "./components/Footer"; */
-import AppRouter from "./routes/AppRouter";
-import "sweetalert2/dist/sweetalert2.min.css";
+import React from "react";
+import Header from "./components/Header";
+// import Footer from "./components/Footer";
+import AppRoutes from "./routes/AppRoutes";
+
 const App = () => {
   return (
     <div>
-      {/* <Header></Header> */}
-      <AppRouter></AppRouter>
+      <Header></Header>
+      <AppRoutes></AppRoutes>
       {/* <Footer></Footer> */}
     </div>
   );
 };
 export default App;
-
-
-
-
-
