@@ -1,15 +1,18 @@
 import React from "react";
 import Header from "./components/Header";
-// import Footer from "./components/Footer";
+// Import Footer from "./components/Footer";
 import AppRoutes from "./routes/AppRoutes";
+import Carousel from "./components/carrusel"; // Asegúrate de que la ruta sea correcta
 
 const App = () => {
   return (
     <div>
-      <Header></Header>
-      <AppRoutes></AppRoutes>
-      {/* <Footer></Footer> */}
+      <Header />
+      <AppRoutes />
+      <Carousel />
+      {/* <Footer /> */}
     </div>
   );
 };
+
 export default App;
