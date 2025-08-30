@@ -1,8 +1,27 @@
 .my-icon {
+    /* color:  #010f29 !important; */
+    color: #8FB7CD !important;
     margin-right: 25px;
     font-size: 15px;
     vertical-align: middle;
+
 }
+
+.custom-navbar {
+    /* background-color:  #8FB7CD !important; */
+    background-color: #010f29 !important;
+}
+
+
+.icono-detaills {
+    color: #8FB7CD;
+    /* font-size: 24px;  */
+}
+    
+.my-icon svg {
+    font-size: 30px;
+}
+
 
 .my-icon:hover {
 
@@ -26,6 +45,9 @@
     margin-right: auto;
 }
 
-.custom-navbar {
-  background-color: #2a6477 !important;
+
+
+.logo-nav {
+    width: 100px;
+    height: auto;
 }

@@ -11,8 +11,8 @@ const App = () => { const pageStyle = {
         width: '100%',
       };
   return (
+
     <div style={pageStyle}>
-      <Header />
       <AppRoutes />
       <Carousel />
 <Carruseles></Carruseles>

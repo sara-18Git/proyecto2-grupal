@@ -9,28 +9,35 @@ import AdminRoutes from "./AdminRoutes";
 import RegisterPage from "../pages/RegisterPage";
 import TeamPage from "../pages/TeamPage";
 import ContactPage from "../pages/ContactPage";
+import LayoutConNav from "../layouts/LayoutConNav";
+import LayoutNavForms from "../layouts/LayoutNavForms";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage></HomePage>}></Route>
+      <Route element={<LayoutConNav></LayoutConNav>}>
+        <Route path="/" element={<HomePage></HomePage>}></Route>
 
-      {/* Rutas protegidas */}
-      <Route element={<AdminRoutes></AdminRoutes>}>
-        <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
+        {/* Rutas protegidas */}
+        <Route element={<AdminRoutes></AdminRoutes>}>
+          <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
+        </Route>
       </Route>
-      <Route path="/login" element={<LoginPage></LoginPage>}></Route>
 
-      <Route
-        path="/registrarse"
-        element={<RegisterPage></RegisterPage>}
-      ></Route>
+      <Route element={<LayoutNavForms></LayoutNavForms>}>
+        <Route path="/login" element={<LoginPage></LoginPage>}></Route>
 
-      <Route path="/team" element={<TeamPage></TeamPage>}></Route>
+        <Route
+          path="/registrarse"
+          element={<RegisterPage></RegisterPage>}
+        ></Route>
 
-      <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
+        <Route path="/team" element={<TeamPage></TeamPage>}></Route>
 
-      <Route path="*" element={<Error404Page></Error404Page>}></Route>
+        <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
+
+        <Route path="*" element={<Error404Page></Error404Page>}></Route>
+      </Route>
     </Routes>
   );
 };
