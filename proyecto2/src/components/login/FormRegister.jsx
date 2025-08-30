@@ -44,13 +44,13 @@ const FormRegister = () => {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Nombre</Form.Label>
+        <Form.Label>Nombre de Usuario</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Nombre"
+          placeholder="Ingrse su nombre de usuario"
           isInvalid={errors.nombre}
           {...register("nombre", {
-            required: "El Nombre es requerido",
+            required: "El nombre de usuario es requerido",
 
             pattern: {
               value: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s'-]+$/,

@@ -7,7 +7,6 @@ import Carousel from "./components/carrusel"; // Asegúrate de que la ruta sea c
 const App = () => {
   return (
     <div>
-      <Header />
       <AppRoutes />
       <Carousel />
       {/* <Footer /> */}

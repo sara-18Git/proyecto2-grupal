@@ -4,6 +4,7 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { FaHome, FaSignInAlt } from "react-icons/fa";
 import { IoIosContacts } from "react-icons/io";
 import Swal from "sweetalert2/dist/sweetalert2.js";
+import LogoNav from "../assets/logo.png";
 
 const Header = () => {
   const navegacion = useNavigate();
@@ -32,28 +33,27 @@ const Header = () => {
     <div>
       <header>
         <nav>
-          <Navbar sticky="top" className="custom-navbar" data-bs-theme="dark">
+          <Navbar fixed="top" className="custom-navbar">
+            {/* fixed o sticky="top"  */}
+            <Container className="custom-navbar">
+              <Nav.Link as={NavLink} to="/">
+                <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
+              </Nav.Link>
 
-          {/* </Navbar><Navbar sticky="top" bg="dark" data-bs-theme="dark"> */}
-            <Container>
-              <Navbar.Brand as={NavLink} to="/">
-                <p className="my-icon text-white mb-0">Logo</p>
-              </Navbar.Brand>
-              <Nav className="me-auto">
+              <Nav>
                 <Nav.Link as={NavLink} to="/">
                   <div className="my-icon">
                     {" "}
-                    <FaHome color="green" />
-                    Inicio
+                    <FaHome className="icono-detaills" />
                   </div>
                 </Nav.Link>
 
                 {user ? (
                   <>
                     <Nav.Link as={NavLink} to="/admin">
-                      <div className="my-icon text-white mb-0">
+                      <div className="my-icon mb-0">
                         {" "}
-                        <IoIosContacts color="orange" /> Admin
+                        <IoIosContacts className="icono-detaills" /> Admin
                       </div>
                     </Nav.Link>
 
@@ -66,7 +66,7 @@ const Header = () => {
                     {" "}
                     <Nav.Link as={NavLink} to="/login">
                       <div className="my-icon">
-                        <FaSignInAlt color="blue" />
+                        <FaSignInAlt className="icono-detaills" />
                         <span>Login</span>
                       </div>
                     </Nav.Link>
@@ -74,11 +74,11 @@ const Header = () => {
                 )}
 
                 <Nav.Link as={NavLink} to="/team">
-                  <p className="my-icon text-white mb-0">Nosotros</p>
+                  <p className="my-icon mb-0">Nosotros</p>
                 </Nav.Link>
 
                 <Nav.Link as={NavLink} to="/contact">
-                  <p className="my-icon text-white mb-0">Contactos</p>
+                  <p className="my-icon mb-0">Contactos</p>
                 </Nav.Link>
               </Nav>
             </Container>
