@@ -7,7 +7,6 @@ import { IoEyeSharp } from "react-icons/io5";
 import { LuSparkles } from "react-icons/lu";
 
 const carrusel = () => {
-  // Flecha izquierda SVG
   const ChevronLeft = () => (
     <svg 
       width="32" 
@@ -23,7 +22,7 @@ const carrusel = () => {
     </svg>
   );
 
-  // Flecha derecha SVG
+  
   const ChevronRight = () => (
     <svg 
       width="32" 
@@ -39,7 +38,7 @@ const carrusel = () => {
     </svg>
   );
 
-  // Elementos del carrusel
+
   const items = [
   <div className="item" data-value="1">
       <img 
@@ -140,13 +139,12 @@ const carrusel = () => {
 
   return (
     <div className="carousel-container">
-      {/* <h2 className="carousel-title">Mi Carrusel</h2> */}
       <div className="carousel-wrapper">
         <AliceCarousel
           mouseTracking
           items={items}
           autoPlay
-          autoPlayInterval={4000}
+          autoPlayInterval={3000}
           infinite
           disableDotsControls={false}
           renderPrevButton={renderPrevButton}
