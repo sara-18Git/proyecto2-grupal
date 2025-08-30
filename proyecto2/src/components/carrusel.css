@@ -1,4 +1,3 @@
-
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -20,7 +19,7 @@
 }
 
 .carousel-wrapper {
-  
+    background-color: #102239;
   width: 100%;
   max-width: 1400px; 
   border-radius: 16px;
@@ -159,7 +158,7 @@
     width: 100%;
     margin: auto;
     direction: ltr;
-    background-color: #102239;
+  
 }
 
 .alice-carousel__dots {
