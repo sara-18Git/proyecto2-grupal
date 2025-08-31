@@ -1,13 +1,16 @@
-import React from 'react'
-import Carruseles from '../components/carruseles'
-import Carrusel from '../components/Carrusel'
+import React from "react";
+import Carruseles from "../components/carruseles";
+import Carrusel from "../components/Carrusel";
+import Beneficios from "../components/Beneficios";
 const HomePage = () => {
   return (
-    <div><hr />
+    <div>
       <Carrusel></Carrusel>
-     <Carruseles></Carruseles>
+      <Carruseles></Carruseles>
+      <br />
+      <Beneficios></Beneficios>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
