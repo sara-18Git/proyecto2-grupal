@@ -5,6 +5,7 @@ import { FaHome, FaSignInAlt } from "react-icons/fa";
 import { IoIosContacts } from "react-icons/io";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import LogoNav from "../assets/logo.png";
+import '../components/header.css'
 
 const Header = () => {
   const navegacion = useNavigate();
@@ -48,6 +49,14 @@ const Header = () => {
                   </div>
                 </Nav.Link>
 
+                <Nav.Link as={NavLink} to="/team">
+                  <p className="my-icon mb-0">Nosotros</p>
+                </Nav.Link>
+
+                <Nav.Link as={NavLink} to="/contact">
+                  <p className="my-icon mb-0">Contactos</p>
+                </Nav.Link>
+
                 {user ? (
                   <>
                     <Nav.Link as={NavLink} to="/admin">
@@ -72,14 +81,6 @@ const Header = () => {
                     </Nav.Link>
                   </>
                 )}
-
-                <Nav.Link as={NavLink} to="/team">
-                  <p className="my-icon mb-0">Nosotros</p>
-                </Nav.Link>
-
-                <Nav.Link as={NavLink} to="/contact">
-                  <p className="my-icon mb-0">Contactos</p>
-                </Nav.Link>
               </Nav>
             </Container>
           </Navbar>

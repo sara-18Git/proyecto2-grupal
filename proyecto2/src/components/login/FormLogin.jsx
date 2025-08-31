@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-
 import { useNavigate } from "react-router-dom";
+import { obtenerUsuariosDeLocalStorage } from "../../utils/localStorage.users";
 
 const formLogin = () => {
   const {
@@ -27,7 +27,31 @@ const formLogin = () => {
 
   function onSubmit(data) {
     console.log(data);
-    if (data.email === "hola@hola.com") {
+
+    const usuariosDeLaDb = obtenerUsuariosDeLocalStorage();
+    const usuario = usuariosDeLaDb.find(
+      (usuarioLS) => usuarioLS.email === data.email
+    );
+
+    console.log(usuario);
+    if (!usuario) {
+      Swal.fire({
+        icon: "error",
+        title: "Resgistrate!",
+        text: "El usuario no existe en la base de datos",
+      });
+      return;
+    }
+    if (usuario.password != data.password) {
+      Swal.fire({
+        icon: "warning",
+        title: "Contraseña incorrecta",
+        text: "Despues de tres intento incorrectos se bloqueara el usuario",
+      });
+      return;
+    }
+
+    if (data.email === "amelie@gmail.com") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -47,7 +71,7 @@ const formLogin = () => {
       draggable: true,
     });
     reset();
-    navegacion("/");
+    navegate("/");
   }
 
   return (
@@ -55,7 +79,7 @@ const formLogin = () => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control
-          type="text"
+          type="email"
           placeholder="Ingrese su email"
           isInvalid={errors.email}
           {...register("email", {
@@ -85,13 +109,15 @@ const formLogin = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
-        Iniciar Sesion
-      </Button>
+      <div className="text-center mt-5">
+        <Button className="detalles-boton" type="submit">
+          Iniciar Sesion
+        </Button>
 
-      <Button variant="primary" onClick={handleGoRegister}>
-        <>Registrarse</>
-      </Button>
+        <Button className="detalles-boton ms-4" onClick={handleGoRegister} >
+          <>Registrarse</>
+        </Button>
+      </div>
     </Form>
   );
 };

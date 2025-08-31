@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
-import { FaHome, FaSignInAlt } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import LogoNav from "../assets/logo.png";
+import '../components/header.css'
 
 const HeaderForms = () => {
   return (
