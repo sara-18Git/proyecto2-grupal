@@ -8,7 +8,7 @@ const RegisterPage = () => {
     <>
     
      <h1 className="text-center py-3 text-primary">Registrarse </h1>
-      <Container className="border rounded p-4 bg-secondary w-50">
+      <Container className="custom-form border rounded p-4 w-50">
            <FormRegister></FormRegister>
       </Container>
     </>
