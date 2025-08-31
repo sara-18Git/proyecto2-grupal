@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin: 20px auto;
+  margin: 116px auto;
   max-width: 95%;
 
 }
@@ -47,7 +47,6 @@
   box-sizing: border-box;
 }
 
-/* Texto a la izquierda */
 .banner-text-left {
   margin-top: 30px;
   margin-left: 30px;
@@ -267,7 +266,10 @@
   .carousel-image {
     height: 250px;
   }
-  
+   .carousel-container {
+    padding: 15px;
+    margin-top: 100px ;
+  }
  .banner-text-left {
     margin-top: 20px;
     margin-left: 20px;
@@ -316,3 +318,9 @@
     width: 95%;
     padding: 10px 0;
   }}
+  @media (max-width:768px){
+ .carousel-container {
+    padding: 15px;
+    margin-top: 100px ;
+  }
+  }
