@@ -1,12 +1,12 @@
 import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-import './carrusel.css';
+import './css/carrusel.css';
 import { TiCloudStorage } from "react-icons/ti";
 import { IoEyeSharp } from "react-icons/io5";
 import { LuSparkles } from "react-icons/lu";
 
-const carrusel = () => {
+const Carrusel = () => {
   const ChevronLeft = () => (
     <svg 
       width="32" 
@@ -157,4 +157,4 @@ const carrusel = () => {
   );
 };
 
-export default carrusel;
+export default Carrusel;

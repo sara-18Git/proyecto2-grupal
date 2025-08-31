@@ -2,8 +2,8 @@ import React from "react";
 import Header from "./components/Header";
 // Import Footer from "./components/Footer";
 import AppRoutes from "./routes/AppRoutes";
-import Carousel from "./components/carrusel"; 
-import Carruseles from "./components/carruseles";
+
+
 import './index.css'
 const App = () => { const pageStyle = {
        background:' linear-gradient(135deg, #051b44ff 0%, #000310 100%)',
@@ -14,8 +14,6 @@ const App = () => { const pageStyle = {
 
     <div style={pageStyle}>
       <AppRoutes />
-      <Carousel />
-<Carruseles></Carruseles>
       {/* <Footer /> */}
     </div>
   );
