@@ -3,7 +3,8 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/carruseles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 const Carruseles = () => {
   const items = [
     {
@@ -67,36 +68,39 @@ const Carruseles = () => {
       category: "Aventura",
     },
   ];
+  
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
 
-const renderItems = items.map((item) => (
-  <div key={item.id} className="carruseles-card h-100 d-flex flex-column">
-    <Link 
-      to={`/producto/${item.id}`}
-      className="text-decoration-none"
-      style={{ color: 'inherit' }}
-    >
-      <div className="carruseles-image-container">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="carruseles-image w-100"
-        />
-      </div>
+  const renderItems = items.map((item) => (
+    <div key={item.id} className="carruseles-card h-100 d-flex flex-column">
+      <Link
+        to={`/producto/${item.id}`}
+        className="text-decoration-none"
+        style={{ color: "inherit" }}
+      >
+        <div className="carruseles-image-container">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="carruseles-image w-100"
+          />
+        </div>
 
-      <div className="carruseles-content d-flex flex-column flex-grow-1">
-        <h3 className="carruseles-title">{item.title}</h3>
-        <p className="carruseles-description flex-grow-1">{item.description}</p>
-        <div className="carruseles-category-tag">{item.category}</div>
-        <span className="carruseles-price mt-auto">{item.price}</span>
-      </div>
-    </Link>
-  </div>
-));
+        <div className="carruseles-content d-flex flex-column flex-grow-1">
+          <h3 className="carruseles-title">{item.title}</h3>
+          <p className="carruseles-description flex-grow-1">
+            {item.description}
+          </p>
+          <div className="carruseles-category-tag">{item.category}</div>
+          <span className="carruseles-price mt-auto">{item.price}</span>
+        </div>
+      </Link>
+    </div>
+  ));
 
   return (
     <div className="carruseles-container">
@@ -120,9 +124,9 @@ const renderItems = items.map((item) => (
                 <path
                   d="M15.5 5l-7 7 7 7"
                   stroke="currentColor"
-                  stroke-width="3"
+                  strokeWidth="3"
                   fill="none"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 />
               </svg>
             </button>
@@ -138,9 +142,9 @@ const renderItems = items.map((item) => (
                 <path
                   d="M8.5 5l7 7-7 7"
                   stroke="currentColor"
-                  stroke-width="3"
+                  strokeWidth="3"
                   fill="none"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 />
               </svg>
             </button>
