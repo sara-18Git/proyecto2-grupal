@@ -3,8 +3,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/carruseles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 const Carruseles = () => {
   const items = [
     {
@@ -75,6 +74,7 @@ const Carruseles = () => {
     1024: { items: 3 },
   };
 
+
   const renderItems = items.map((item) => (
     <div key={item.id} className="carruseles-card h-100 d-flex flex-column">
       <Link
@@ -101,7 +101,6 @@ const Carruseles = () => {
       </Link>
     </div>
   ));
-
   return (
     <div className="carruseles-container">
       <h2 className="carruseles-heading">Juegos Destacados</h2>
@@ -124,6 +123,7 @@ const Carruseles = () => {
                 <path
                   d="M15.5 5l-7 7 7 7"
                   stroke="currentColor"
+
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
