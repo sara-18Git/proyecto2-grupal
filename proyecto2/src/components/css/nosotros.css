@@ -1,0 +1,32 @@
+/* Estilos para el contenedor de la imagen */
+.carruseles-image-container {
+  overflow: hidden; /* Esto es crucial para que el zoom no desborde */
+  border-radius: 180px; /* Si quieres bordes redondeados */
+  position: relative; /* Necesario para que el borde dorado se posicione correctamente */
+  transition: transform 0.3s ease-in-out; /* Transición para el zoom del contenedor */
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.carruseles-image {
+  width: 80%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Transición para el zoom de la imagen y el borde */
+  object-fit: cover; /* Para que la imagen cubra el contenedor sin distorsionarse */
+}
+
+/* Efecto al pasar el mouse sobre el contenedor */
+.carruseles-card:hover .carruseles-image-container {
+  transform: scale(1.03); /* Un ligero zoom al contenedor para un efecto más envolvente */
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.carruseles-card:hover .carruseles-image {
+  transform: scale(1.05); /* Pequeño zoom a la imagen */
+}
+
+/* Contorno dorado al pasar el mouse */
+.carruseles-card:hover .carruseles-image-container {
+  box-shadow: 0 0 30px 5px gold; /* Sombra dorada exterior */
+  border: 2px solid gold; /* Borde dorado */
+}
