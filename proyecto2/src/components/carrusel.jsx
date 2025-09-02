@@ -6,7 +6,7 @@ import { TiCloudStorage } from "react-icons/ti";
 import { IoEyeSharp } from "react-icons/io5";
 import { LuSparkles } from "react-icons/lu";
 
-const Carrusel = () => {
+const Carruseles = () => {
   const ChevronLeft = () => (
     <svg 
       width="32" 
@@ -157,4 +157,4 @@ const Carrusel = () => {
   );
 };
 
-export default Carrusel;
+export default Carruseles;
