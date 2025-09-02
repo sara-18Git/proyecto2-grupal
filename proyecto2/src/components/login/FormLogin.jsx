@@ -25,6 +25,19 @@ const formLogin = () => {
     navegate("/registrarse");
   };
 
+  const handleNewPassword = () => {
+    Swal.fire({
+      icon: "success",
+      iconColor: "#8FB7CD",
+      title: "¡Listo!",
+      text: "Tu contraseña está en proceso de ser recuperada",
+      confirmButtonColor: "#8FB7CD", // azul
+      cancelButtonColor: "#d33", // rojo
+    });
+    navegate("/");
+    // navegate("/reset");
+  };
+
   function onSubmit(data) {
     console.log(data);
 
@@ -102,7 +115,15 @@ const formLogin = () => {
           type="password"
           placeholder="Ingrese su contraseña"
           isInvalid={errors.password}
-          {...register("password", { required: "El password es requerido" })}
+          {...register("password", {
+            required: "El password es requerido",
+            pattern: {
+              value:
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[\]{};':"\\|,.<>\/?]).{8,}$/,
+              message:
+                "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial.",
+            },
+          })}
         />
         <Form.Control.Feedback type="invalid">
           {errors.password?.message}
@@ -114,8 +135,12 @@ const formLogin = () => {
           Iniciar Sesion
         </Button>
 
-        <Button className="detalles-boton ms-4" onClick={handleGoRegister} >
+        <Button className="detalles-boton ms-4" onClick={handleGoRegister}>
           <>Registrarse</>
+        </Button>
+
+        <Button className="detalles-boton ms-4" onClick={handleNewPassword}>
+          <>Recuperar contraseña</>
         </Button>
       </div>
     </Form>

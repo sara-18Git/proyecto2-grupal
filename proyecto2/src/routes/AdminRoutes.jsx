@@ -9,7 +9,7 @@ const AdminRoutes = () => {
   if (user === "admin@gmail.com") {
     return <Outlet />;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 };
 

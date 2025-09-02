@@ -10,7 +10,7 @@
 .detalles-boton {
   color: #2a6479;              /* Color del texto */
   border: 2px solid #2a6479;   /* Borde visible del mismo color */
-  background-color: transparent;   /*Fondo transparente para destacar el borde */
+  background-color: #010f29   !important;;   /*Fondo transparente para destacar el borde */
   padding: 8px 16px;           /* Espaciado interno */
   border-radius: 4px;          /* Bordes ligeramente redondeados */
   font-weight: bold;           /* Texto más marcado */
@@ -19,7 +19,7 @@
 }
 
 .boton-personalizado:hover {
-  background-color: #010f29;   /* Fondo del mismo color al pasar el mouse */
+  background-color: #010f29   !important;  /* Fondo del mismo color al pasar el mouse */
   color: white;                /* Texto blanco para contraste */
 }
 
@@ -27,19 +27,23 @@
 
 .custom-form {
     background-color:  #8FB7CD !important;
+    
 }
 
 .custom-navbar {
-
+    max-width: 100%;
     background-color: #010f29 !important;
+
 }
 
 
 .icono-detaills {
     color: #8FB7CD;
     margin-right: 8px;
-    /* font-size: 24px;  */
+    width: 20px;
+    /* font-size: 100px;  */
 }
+
 
 .my-icon svg {
     font-size: 30px;
@@ -74,3 +78,15 @@
     width: 100px;
     height: auto;
 }
+
+
+.toggle-blanco {
+  background-color: transparent; /* si no querés fondo */
+  border: 1px solid white;       /* borde blanco */
+  color: white;                  /* ícono blanco */
+}
+
+.toggle-blanco .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
