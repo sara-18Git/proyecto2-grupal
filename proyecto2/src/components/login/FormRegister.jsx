@@ -25,6 +25,13 @@ const FormRegister = () => {
       confirmPassword: "",
     },
   });
+
+  const navegate = useNavigate();
+
+  const handleGoHome = () => {
+    navegate("/");
+  };
+
   const navegacion = useNavigate();
 
   function onSubmit(data) {
@@ -40,8 +47,9 @@ const FormRegister = () => {
       Swal.fire({
         icon: "question",
         title: "Olvidaste tu contraseña?..",
-        text: "El usuario no existe en la base de datos",
+        text: "El usuario ya existe en la base de datos",
       });
+      reset();
       return;
     }
 
@@ -56,7 +64,7 @@ const FormRegister = () => {
 
       const nuevoUsuario = {
         id: Date.now(),
-        nombreUsuario: data.nombreUsuario,
+        nombreUsuario: data.userName,
         email: data.email,
         password: data.password,
         createdAt: new Date().toISOString(),
@@ -182,9 +190,15 @@ const FormRegister = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Button className="detalles-boton" type="submit">
-        Enviar
-      </Button>
+      <div className="text-center mt-5 d-flex flex-column justify-content-center gap-2 flex-md-row">
+        <Button className="detalles-boton " type="submit">
+          Enviar
+        </Button>
+
+        <Button className="detalles-boton" onClick={handleGoHome}>
+          <>Cancelar</>
+        </Button>
+      </div>
     </Form>
   );
 };
