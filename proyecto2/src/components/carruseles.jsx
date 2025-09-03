@@ -4,7 +4,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/carruseles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from 'react-router-dom';
-const CarruselesNosotros = () => {
+const Carruseles = () => {
   const items = [
     {
       id: 1,
@@ -155,4 +155,4 @@ const CarruselesNosotros = () => {
   );
 };
 
-export default CarruselesNosotros;
+export default Carruseles;
