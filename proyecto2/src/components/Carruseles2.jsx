@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Carruseles2 = () => {
   const items = [
     {
-      id: 1,
+      id: 7,
       image:
         "https://image.api.playstation.com/vulcan/ap/rnd/202308/3005/537b5208a8ee42935286a44b3b981da86d976bf54899bf98.jpg",
       title: "Final Fantasy VII Rebirth",
@@ -17,7 +17,7 @@ const Carruseles2 = () => {
       category: "Pelea/Aventura",
     },
     {
-      id: 2,
+      id: 8,
       image:
         "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2778580/capsule_616x353.jpg?t=1744748042",
       title: "Elden Ring Shadow of the Erdtree",
@@ -27,7 +27,7 @@ const Carruseles2 = () => {
       category: "DLC",
     },
     {
-      id: 3,
+      id: 9,
       image:
         "https://helldivers.wiki.gg/images/thumb/HD2_SteamLibrary-Portrait.jpg/300px-HD2_SteamLibrary-Portrait.jpg?ffffe7",
       title: "Helldivers 2",
@@ -37,7 +37,7 @@ const Carruseles2 = () => {
       category: "Shooter Cooperativo",
     },
     {
-      id: 4,
+      id: 10,
       image:
         "https://assets-prd.ignimgs.com/2024/08/18/blackmyth-1723969364570.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
       title: "Black Myth: Wukong",
@@ -47,7 +47,7 @@ const Carruseles2 = () => {
       category: "Accion/Aventura/Pelea",
     },
     {
-      id: 5,
+      id: 11,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMshu9wCalymvV2oOV937HrLrGd80n0qSwsQlMvc6ChAqgowndgS8h1RY7wwoiu6vVGd-l",
       title: "Yakuza: Like a Dragon",
@@ -57,7 +57,7 @@ const Carruseles2 = () => {
       category: "Accion/Aventura",
     },
     {
-      id: 6,
+      id: 12,
       image:
         "https://s3.amazonaws.com/gameopedia_covers/covers/292397/2d8741d405211526a08f7e8c8a8b22db.jpeg",
       title: "bloodborne",

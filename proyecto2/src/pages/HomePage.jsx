@@ -5,6 +5,7 @@ import Beneficios from "../components/Beneficios";
 import Destacado from "../components/Destacado";
 import Carruseles2 from "../components/carruseles2";
 
+
 const HomePage = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Destacado></Destacado>
       <br />
       <Carruseles2></Carruseles2>
+      <br />
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Carruseles = () => {
       title: "GTA 5",
       description:
         "Explora una ciudad gigantesca, comete crímenes y elige entre tres protagonistas en esta épica aventura.",
-      price: "$17.500ARS",
+      price: "$35.500ARS",
       category: "Accion",
     },
     {
