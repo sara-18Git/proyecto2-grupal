@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/destacado.css";
+import { FaPlayCircle } from "react-icons/fa";
 
 const Destacado = () => {
   return (
@@ -16,17 +17,29 @@ const Destacado = () => {
           <span>JUEGO DESTCADO DEL MES</span>
           <h2>Final Fantasy VII Rebirth</h2>
           <p>
-           La continuación de la remake de uno de los JRPG más icónicos. Explora 
-            un mundo abierto masivo, descubre nuevas historias y revive los momentos 
-            clásicos con gráficos de última generación y jugabilidad mejorada.
+            La continuación de la remake de uno de los JRPG más icónicos.
+            Explora un mundo abierto masivo, descubre nuevas historias y revive
+            los momentos clásicos con gráficos de última generación y
+            jugabilidad mejorada.
           </p>
-          <div className="banner-precio">$55.000 ARS</div>
+          <div className="banner-precio">$70.000 ARS</div>
           <div className="banner-acciones">
             {/* <Link to="/producto/cyberpunk-2077" className="btn btn-primary">
               Ver Detalles
             </Link> */}
-            <button className="btn btn-secondary">Agregar a lista de deseos</button>
-            <button className="btn btn-secondary">Comprar</button>
+            <a
+              href="https://youtu.be/ESADIKP28AE?si=AIR1nwJRUao29a5f  "
+              target="blank"
+              className="btn btn-secondary"
+            >
+              <FaPlayCircle />
+            </a>
+            <a href=" "className="btn btn-secondary">
+              Agregar a lista de deseos
+            </a>
+            <a href=" "className="btn btn-secondary">
+              Comprar
+            </a>
           </div>
         </div>
       </div>
