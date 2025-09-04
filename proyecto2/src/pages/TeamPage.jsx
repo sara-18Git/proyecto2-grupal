@@ -1,7 +1,7 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import CarruselesNosotros from "../components/Carrusel_nosotros.jsx";
+import CarruselesNosotros from "../components/Carrusel_Nosotros.jsx";
 
 const members = [
   {
