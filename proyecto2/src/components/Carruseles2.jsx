@@ -3,19 +3,16 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/carruseles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import { itemsRecomendados } from "../db/juegosRecomendados";
 const Carruseles2 = () => {
-  
-  
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
-
-
   const renderItems = itemsRecomendados.map((item) => (
+
     <div key={item.id} className="carruseles-card h-100 d-flex flex-column">
       <Link
         to={`/producto/${item.id}`}
