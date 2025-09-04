@@ -5,7 +5,7 @@ import AdminPage from "../pages/AdminPage";
 import LoginPage from "../pages/LoginPage";
 import Error404Page from "../pages/Error404Page";
 import AdminRoutes from "./AdminRoutes";
-
+import DetallesPage from "../pages/DetallesPage";
 import RegisterPage from "../pages/RegisterPage";
 import TeamPage from "../pages/TeamPage";
 import ContactPage from "../pages/ContactPage";
@@ -31,7 +31,7 @@ const AppRoutes = () => {
           path="/registrarse"
           element={<RegisterPage></RegisterPage>}
         ></Route>
-
+        <Route path="/producto/:id" element={<DetallesPage />} />
         <Route path="/team" element={<TeamPage></TeamPage>}></Route>
 
         <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
