@@ -186,7 +186,7 @@ const DetallesPage = () => {
         },
         {
           type: "image",
-          url: "https://i.guim.co.uk/img/media/d5eab25b9cd2a38580bf8a13e7756b2eb27e6a5d/79_167_1047_628/master/1047.jpg?width=1300&dpr=1&s=none&crop=none",
+          url: "https://variety.com/wp-content/uploads/2024/08/valorant.png?w=1000&h=667&crop=1&resize=681%2C454",
         },
       ],
     },
@@ -336,8 +336,8 @@ const DetallesPage = () => {
 
   return (
     <div className="contenedor-detalles">
-      <div className="container py-4">
-        <div className="row">
+      <div className="container-fluid py-4 ">
+        <div className="row px-2">
           <div className="col-md-6 mb-4">
             <div className="contenedor-medios mb-3 position-relative">
               {renderizarContenidoPrincipal()}
