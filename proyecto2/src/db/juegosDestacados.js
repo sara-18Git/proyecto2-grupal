@@ -1,5 +1,3 @@
-
-
 export const itemsDestacados = [
     {
       id: 1,

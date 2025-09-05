@@ -15,20 +15,21 @@ export function guardarJuegos(juegos) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(juegos));
   } catch (err) {
-    console.error( "guardarJuegos, error:", err);
+    console.error("guardarJuegos, error:", err);
   }
 }
 
 export function agregarJuego(juego) {
   const juegos = obtenerJuegos();
   juegos.push(juego);
- guardarJuegos(juegos);
+  guardarJuegos(juegos);
 }
 
 export function eliminarJuegoPorId(id) {
   const juegos = obtenerJuegos().filter((juego) => juego.id !== id);
- guardarJuegos(juegos);
+  guardarJuegos(juegos);
 }
+
 export function obtenerJuegoPorId(id) {
   return obtenerJuegos().find((juego) => juego.id === id);
 }
@@ -54,6 +55,40 @@ export function actualizarJuego(id, cambios) {
     ...cambios,
     updatedAt: new Date().toISOString(),
   };
- guardarJuegos(juegos);
+  guardarJuegos(juegos);
   return true;
+}
+export function migrarJuegosCarrusel1(juegosDestacados) {
+  const juegosExistentes = obtenerJuegos();
+  if (juegosExistentes.length > 0) {
+    console.log("Ya existen juegos en el sistema, no se migran los destacados");
+    return;
+  }
+
+  const juegosParaMigrar = juegosDestacados.map((juego) => ({
+    id: juego.id,
+    title: juego.title,
+    descripcion: juego.description,
+    genero: juego.category,
+    imagen: juego.image,
+    precio: juego.price,
+    createdAt: new Date().toISOString(),
+  }));
+
+  guardarJuegos(juegosParaMigrar);
+  console.log(`${juegosParaMigrar.length} juegos migrados al sistema`);
+}
+
+export function forzarMigracionJuegos(juegosDestacados) {
+  const juegosParaMigrar = juegosDestacados.map((juego) => ({
+    id: juego.id,
+    title: juego.title,
+    descripcion: juego.description,
+    genero: juego.category,
+    imagen: juego.image,
+    precio: juego.price,
+    createdAt: new Date().toISOString(),
+  }));
+  guardarJuegos(juegosParaMigrar);
+  console.log(`${juegosParaMigrar.length} juegos migrados forzadamente`);
 }

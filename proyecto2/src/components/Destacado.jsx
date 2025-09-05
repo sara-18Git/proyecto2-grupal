@@ -30,14 +30,14 @@ const Destacado = () => {
             <a
               href="https://youtu.be/ESADIKP28AE?si=AIR1nwJRUao29a5f  "
               target="blank"
-              className="btn btn-secondary"
+              className="btn-DestacadoBanner btn-secondaryo"
             >
               <FaPlayCircle />
             </a>
-            <a href=" "className="btn btn-secondary">
+            <a href=" "className="btn-DestacadoBanner btn-secondaryo">
               Agregar a lista de deseos
             </a>
-            <a href=" "className="btn btn-secondary">
+            <a href=" "className="btn-DestacadoBanner btn-secondaryo">
               Comprar
             </a>
           </div>
