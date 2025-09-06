@@ -70,8 +70,9 @@ export default function TablaJuegos() {
             <th>Título</th>
             <th>Descripción</th>
             <th>Precio</th>
-            <th style={{ minWidth: 180 }}>Creado</th>
-            <th style={{ minWidth:  250  }}>Acciones</th>
+            <th style={{ minWidth: 180 }}>Genero</th>
+            <th style={{ minWidth: 250 }}>Creado</th>
+            <th style={{ minWidth: 250}}>Acciones</th>
           </tr>
         </thead>
         <tbody>

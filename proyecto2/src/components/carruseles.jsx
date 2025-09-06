@@ -3,44 +3,40 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/carruseles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { itemsDestacados } from "../db/juegosDestacados";
-import { obtenerJuegos } from "../services/juegos.services"; // ← Importa la función
+import { obtenerJuegos } from "../services/juegos.services";
 
 const Carruseles = () => {
-  const [juegos, setJuegos] = useState(itemsDestacados); // ← Estado local para los juegos
-
-  // Efecto para sincronizar con los cambios del admin
+  const [juegos, setJuegos] = useState(itemsDestacados);
   useEffect(() => {
     const sincronizarConAdmin = () => {
       const juegosAdmin = obtenerJuegos();
-      
-      // Si hay juegos en el admin, mezclarlos con los del carrusel
       if (juegosAdmin.length > 0) {
-        const juegosActualizados = itemsDestacados.map(juegoOriginal => {
-          // Buscar si este juego fue modificado en el admin
-          const juegoModificado = juegosAdmin.find(j => j.id === juegoOriginal.id);
-          
-          // Si fue modificado, usar los datos del admin, sino mantener los originales
-          return juegoModificado ? {
-            ...juegoOriginal, // Mantener estructura original
-            title: juegoModificado.title || juegoOriginal.title,
-            description: juegoModificado.descripcion || juegoOriginal.description,
-            category: juegoModificado.genero || juegoOriginal.category,
-            image: juegoModificado.imagen || juegoOriginal.image,
-            price: juegoModificado.precio || juegoOriginal.price
-          } : juegoOriginal;
+        const juegosActualizados = itemsDestacados.map((juegoOriginal) => {
+          const juegoModificado = juegosAdmin.find(
+            (j) => j.id === juegoOriginal.id
+          );
+          return juegoModificado
+            ? {
+                ...juegoOriginal,
+                title: juegoModificado.title || juegoOriginal.title,
+                description:
+                  juegoModificado.descripcion || juegoOriginal.description,
+                category: juegoModificado.genero || juegoOriginal.category,
+                image: juegoModificado.imagen || juegoOriginal.image,
+                price: juegoModificado.precio || juegoOriginal.price,
+              }
+            : juegoOriginal;
         });
-        
+
         setJuegos(juegosActualizados);
       }
     };
 
     sincronizarConAdmin();
-
-    // Escuchar cambios en localStorage para actualizar en tiempo real
     const manejarCambioStorage = (e) => {
-      if (e.key === "juegos") {
+      if (evento.key === "juegos") {
         sincronizarConAdmin();
       }
     };

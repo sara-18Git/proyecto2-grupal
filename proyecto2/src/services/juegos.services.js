@@ -72,6 +72,7 @@ export function migrarJuegosCarrusel1(juegosDestacados) {
     genero: juego.category,
     imagen: juego.image,
     precio: juego.price,
+    rol: "destacados",  
     createdAt: new Date().toISOString(),
   }));
 
@@ -87,6 +88,7 @@ export function forzarMigracionJuegos(juegosDestacados) {
     genero: juego.category,
     imagen: juego.image,
     precio: juego.price,
+      rol: "destacados",  
     createdAt: new Date().toISOString(),
   }));
   guardarJuegos(juegosParaMigrar);

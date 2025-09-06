@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-
+import "../css/tabla.css";
+import { FaRegStar } from "react-icons/fa";
+import { LiaCertificateSolid } from "react-icons/lia";
 const FilaTabla = ({
   juego,
   idx,
@@ -10,10 +12,19 @@ const FilaTabla = ({
 }) => {
   return (
     <tr key={juego.id}>
-      <td>{idx + 1}</td>
+      <td>
+        <div>
+          <strong>{idx + 1}</strong>
+
+          <div className="text-muted fs-6 small mt-3">
+            {juego.rol ? <span>Rol: {juego.rol} <FaRegStar className=" text-danger"/>
+</span> : "no hay ningun rol asignado"}
+          </div>
+        </div>
+      </td>
       <td>
         <div className="d-flex align-items-center">
-          {juego.imagen && (
+          {juego.imagen &&(
             <img
               src={juego.imagen}
               alt={juego.title}
@@ -24,28 +35,20 @@ const FilaTabla = ({
                 marginRight: "10px",
                 borderRadius: "4px",
               }}
-              onError={(e) => {
-                e.target.style.display = "none";
-              }}
             />
           )}
-          <div>
-            <strong>{juego.title}</strong>
-            {juego.genero && (
-              <div className="small text-muted">{juego.genero}</div>
-            )}
-          </div>
+          <strong>{juego.title}</strong>
         </div>
       </td>
-      <td>
-        {juego.descripcion && juego.descripcion.length > 50
-          ? `${juego.descripcion.substring(0, 50)}...`
-          : juego.descripcion}
-      </td>
-      <td>{juego.precio || "N/A"}</td>
+
+      <td>{juego.descripcion || "Sin descripción"}</td>
+      <td >{juego.precio || "N/A"}</td>
+      <td>{juego.genero || "N/A"}</td>
       <td>{formatearFecha(juego.createdAt)}</td>
-      <td className="d-flex gap-2">
+
+      <td className="filas d-flex gap-3 ">
         <Button
+          className="BotonesTabla mx-3 mt-5"
           size="sm"
           variant="secondary"
           onClick={() => setEditando(juego)}
@@ -53,6 +56,7 @@ const FilaTabla = ({
           Editar
         </Button>
         <Button
+          className="BotonesTabla mx-3 mt-5"
           size="sm"
           variant="danger"
           onClick={() => manejarEliminar(juego.id)}
