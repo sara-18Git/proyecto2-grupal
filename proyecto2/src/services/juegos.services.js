@@ -16,13 +16,16 @@ export function guardarJuegos(juegos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(juegos));
   } catch (err) {
     console.error("guardarJuegos, error:", err);
+
   }
 }
 
 export function agregarJuego(juego) {
   const juegos = obtenerJuegos();
   juegos.push(juego);
+
   guardarJuegos(juegos);
+
 }
 
 export function eliminarJuegoPorId(id) {
@@ -94,3 +97,4 @@ export function forzarMigracionJuegos(juegosDestacados) {
   guardarJuegos(juegosParaMigrar);
   console.log(`${juegosParaMigrar.length} juegos migrados forzadamente`);
 }
+

@@ -45,13 +45,14 @@ const Carruseles = () => {
     return () => window.removeEventListener("storage", manejarCambioStorage);
   }, []);
 
+
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
-
   const renderItems = juegos.map((item) => (
+
     <div key={item.id} className="carruseles-card h-100 d-flex flex-column">
       <Link
         to={`/producto/${item.id}`}

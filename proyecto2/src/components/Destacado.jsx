@@ -30,6 +30,7 @@ const Destacado = () => {
             <a
               href="https://youtu.be/ESADIKP28AE?si=AIR1nwJRUao29a5f  "
               target="blank"
+
               className="btn-DestacadoBanner btn-secondaryo"
             >
               <FaPlayCircle />
@@ -38,6 +39,7 @@ const Destacado = () => {
               Agregar a lista de deseos
             </a>
             <a href=" "className="btn-DestacadoBanner btn-secondaryo">
+
               Comprar
             </a>
           </div>

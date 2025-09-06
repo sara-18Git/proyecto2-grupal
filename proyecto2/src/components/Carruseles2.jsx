@@ -6,13 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from 'react-router-dom';
 import { itemsRecomendados } from "../db/juegosRecomendados";
 const Carruseles2 = () => {
-  
-  
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
+
 
 
   const renderItems = itemsRecomendados.map((item) => (
