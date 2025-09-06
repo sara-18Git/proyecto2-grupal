@@ -16,16 +16,13 @@ export function guardarJuegos(juegos) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(juegos));
   } catch (err) {
     console.error("guardarJuegos, error:", err);
-
   }
 }
 
 export function agregarJuego(juego) {
   const juegos = obtenerJuegos();
   juegos.push(juego);
-
   guardarJuegos(juegos);
-
 }
 
 export function eliminarJuegoPorId(id) {
@@ -61,40 +58,76 @@ export function actualizarJuego(id, cambios) {
   guardarJuegos(juegos);
   return true;
 }
-export function migrarJuegosCarrusel1(juegosDestacados) {
+
+// FUNCIÓN ÚNICA - Elimina las duplicadas y deja solo esta
+export function migrarJuegosCarruseles(juegosDestacados, juegosRecomendados = []) {
   const juegosExistentes = obtenerJuegos();
+  
+  // Si ya hay juegos, no migrar para no duplicar
   if (juegosExistentes.length > 0) {
-    console.log("Ya existen juegos en el sistema, no se migran los destacados");
+    console.log("Ya existen juegos en el sistema, no se migran");
     return;
   }
 
-  const juegosParaMigrar = juegosDestacados.map((juego) => ({
-    id: juego.id,
-    title: juego.title,
-    descripcion: juego.description,
-    genero: juego.category,
-    imagen: juego.image,
-    precio: juego.price,
-    rol: "destacados",  
-    createdAt: new Date().toISOString(),
-  }));
+  // Combinar juegos destacados y recomendados
+  const todosLosJuegos = [
+    // Juegos destacados (rol: "destacados")
+    ...juegosDestacados.map((juego) => ({
+      id: juego.id,
+      title: juego.title,
+      descripcion: juego.description,
+      genero: juego.category,
+      imagen: juego.image,
+      precio: juego.price,
+      rol: "destacados",
+      createdAt: new Date().toISOString(),
+    })),
+    
+    // Juegos recomendados (rol: "recomendado") - con IDs diferentes
+    ...juegosRecomendados.map((juego) => ({
+      id: juego.id + 100, // Sumamos 100 para IDs únicos
+      title: juego.title,
+      descripcion: juego.description,
+      genero: juego.category,
+      imagen: juego.image,
+      precio: juego.price,
+      rol: "recomendado",
+      createdAt: new Date().toISOString(),
+    }))
+  ];
 
-  guardarJuegos(juegosParaMigrar);
-  console.log(`${juegosParaMigrar.length} juegos migrados al sistema`);
+  guardarJuegos(todosLosJuegos);
+  console.log(`${todosLosJuegos.length} juegos migrados al sistema`);
 }
 
-export function forzarMigracionJuegos(juegosDestacados) {
-  const juegosParaMigrar = juegosDestacados.map((juego) => ({
-    id: juego.id,
-    title: juego.title,
-    descripcion: juego.description,
-    genero: juego.category,
-    imagen: juego.image,
-    precio: juego.price,
-      rol: "destacados",  
-    createdAt: new Date().toISOString(),
-  }));
-  guardarJuegos(juegosParaMigrar);
-  console.log(`${juegosParaMigrar.length} juegos migrados forzadamente`);
-}
+// Función para forzar migración (sobrescribe todo)
+export function forzarMigracionJuegos(juegosDestacados, juegosRecomendados = []) {
+  const todosLosJuegos = [
+    // Juegos destacados
+    ...juegosDestacados.map((juego) => ({
+      id: juego.id,
+      title: juego.title,
+      descripcion: juego.description,
+      genero: juego.category,
+      imagen: juego.image,
+      precio: juego.price,
+      rol: "destacados",
+      createdAt: new Date().toISOString(),
+    })),
+    
+    // Juegos recomendados
+    ...juegosRecomendados.map((juego) => ({
+      id: juego.id + 100,
+      title: juego.title,
+      descripcion: juego.description,
+      genero: juego.category,
+      imagen: juego.image,
+      precio: juego.price,
+      rol: "recomendado",
+      createdAt: new Date().toISOString(),
+    }))
+  ];
 
+  guardarJuegos(todosLosJuegos);
+  console.log(`${todosLosJuegos.length} juegos migrados forzadamente`);
+}

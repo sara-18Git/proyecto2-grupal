@@ -4,13 +4,13 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import {
   obtenerJuegos,
   eliminarJuegoPorId,
-  migrarJuegosCarrusel1,
+  migrarJuegosCarruseles,
 } from "../../services/juegos.services";
 import CreateGameModal from "./CreateGameModal";
 import EditJuegosModal from "./EditJuegosModal";
 import FilaTabla from "./FilaTabla";
 import { itemsDestacados } from "../../db/juegosDestacados";
-
+import { itemsRecomendados } from "../../db/juegosRecomendados";
 function formatearFecha(iso) {
   try {
     return new Date(iso).toLocaleString();
@@ -25,7 +25,7 @@ export default function TablaJuegos() {
 
   const cargar = () => setJuegos(obtenerJuegos());
   useEffect(() => {
-    migrarJuegosCarrusel1(itemsDestacados); //
+    migrarJuegosCarruseles(itemsDestacados, itemsRecomendados); //
     cargar();
     const enAlmacenamiento = (e) => {
       if (e.key === "juegos") cargar();

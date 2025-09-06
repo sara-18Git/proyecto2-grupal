@@ -6,7 +6,7 @@
     transition: transform 0.3s ease;
 }
 
-.detalles-boton {
+div .detalles-boton {
     background: linear-gradient(45deg, #2a6479, #355d76);
     color: #8fb7cd;
     box-shadow: 0 12px 30px rgba(42, 100, 121, 0.4);

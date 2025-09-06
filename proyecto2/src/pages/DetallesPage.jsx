@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useParams, Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -55,9 +56,9 @@ const DetallesPage = () => {
       detallesCompletos: ` Grand Theft Auto V es un videojuego de acción y aventura de mundo abierto ambientado en la metrópoli ficticia de Los Santos y las zonas rurales del condado de Blaine, basados en Los Ángeles y el sur de California. La narrativa sigue a tres protagonistas principales: el ladrón retirado Michael De Santa, el gangster callejero Franklin Clinton y el traficante de armas psicótico Trevor Philips; cuyas historias se entrelazan mientras realizan una serie de peligrosos golpes. El juego ofrece una crítica social satírica de la cultura estadounidense moderna, al tiempo que proporciona una experiencia masiva que combina la historia cinematográfica con la libertad de explorar un mundo vasto y lleno de detalles. Los jugadores pueden nadar, volar, conducir una inmensa variedad de vehículos y participar en numerosas actividades secundarias, desde tenis y golf hasta invertir en la bolsa de valores. Su modo en línea, GTA Online, expande la experiencia permitiendo a los jugadores crear sus propios personajes y cooperar o competir en un mundo persistente en constante evolución.`,
       desarrollador: "Rockstar Games",
       fechaLanzamiento: "17 de Septiembre, 2013",
-      requisitos:
-        "Windows 8.1 64-Bit, 4 GB RAM, ",
-      requisitos2: "Intel Core 2 Quad CPU Q6600 @ 2.40GHz o AMD Phenom 9850 Quad-Core Processor",
+      requisitos: "Windows 8.1 64-Bit, 4 GB RAM, ",
+      requisitos2:
+        "Intel Core 2 Quad CPU Q6600 @ 2.40GHz o AMD Phenom 9850 Quad-Core Processor",
       requisitos3: "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
       medios: [
         {
@@ -92,8 +93,7 @@ const DetallesPage = () => {
       detallesCompletos: `Fortnite es un fenómeno cultural que trasciende el género de los videojuegos, comenzando como un título de supervivencia cooperativa (Save the World) y eclosionando globalmente con su modo Battle Royale gratuito. En este modo, 100 jugadores son lanzados desde un autobús volador a un mapa vibrante y en constante evolución, donde deben competir para ser el último en pie. Su sello de identidad es el sistema de construcción único, que permite a los jugadores recolectar materiales (madera, piedra y metal) para editar el terreno en tiempo real, construyendo rampas, paredes y fuertes para ganar ventaja táctica en los enfrentamientos. El juego se caracteriza por su estética colorida y cartoon, su accesibilidad y su modelo de "temporadas" que introducen constantemente nuevo contenido, como mapas renovados, armas, vehículos, y un pase de batalla con una narrativa continua que desbloquea cientos de cosméticos. Más que un juego, Fortnite es una plataforma social y un escenario para eventos masivos en vivo, como conciertos de artistas como Travis Scott y Ariana Grande, y estrenos de películas, consolidándose como un metaverso de entretenimiento digital.`,
       desarrollador: "Epic Games",
       fechaLanzamiento: "25 de Julio, 2017",
-      requisitos:
-        "CPU: Core i3-3225 3.3 GHz; GPU: Intel HD 4000 (integrada) ",
+      requisitos: "CPU: Core i3-3225 3.3 GHz; GPU: Intel HD 4000 (integrada) ",
       requisitos2: "RAM: 4 GB",
       requisitos3: "SO: Windows 7/8/10/11 64-bit",
       medios: [
@@ -131,7 +131,8 @@ const DetallesPage = () => {
       fechaLanzamiento: "19 de Enero, 2024",
       requisitos:
         "SO: Windows 10/11 64-bit,Procesador: Intel Core i7-9700K / AMD Ryzen 7 3700X",
-      requisitos2: "Memoria: 16 GB RAM,Gráficos: NVIDIA RTX 3070 / AMD RX 6700 XT",
+      requisitos2:
+        "Memoria: 16 GB RAM,Gráficos: NVIDIA RTX 3070 / AMD RX 6700 XT",
       requisitos3: "Almacenamiento: 100 GB SSD (NVMe recomendado)",
       medios: [
         {
@@ -166,8 +167,7 @@ const DetallesPage = () => {
       detallesCompletos: `VALORANT es un hero shooter táctico en primera persona gratuito, desarrollado y publicado por Riot Games. Ambientado en un futuro cercano, el juego combina elementos de shooters precisos como Counter-Strike con habilidades únicas basadas en personajes (agentes). Dos equipos de cinco jugadores se enfrentan en rondas alternas como atacantes o defensores, con el objetivo de plantar o desactivar una bomba (el "Spike"). Cada agente posee cuatro habilidades distintivas (una de ellas definitiva), que requieren carga progresiva o recarga por rondas, añadiendo capas estratégicas de gestión de recursos y coordinación. Su jugabilidad se centra en la precisión de los disparos, el control de mapas con zonas estrechas y pasos angostos, y el uso inteligente de habilidades para obtener ventajas tácticas. El juego es conocido por su estética vibrante, su competitividad ajustada al milímetro, su sistema anticheat de kernel (Vanguard) y su constante evolución con nuevos agentes, mapas y modos de juego. Es un título fundamental en el panorama del esports, con una escena profesional global y activa.`,
       desarrollador: "Riot Games",
       fechaLanzamiento: "2 de Junio, 2020",
-      requisitos:
-        "CPU: Intel Core i3-4150 / AMD Ryzen 3 1200",
+      requisitos: "CPU: Intel Core i3-4150 / AMD Ryzen 3 1200",
       requisitos2: "GPU: NVIDIA GeForce GT 730 / AMD Radeon R7 240RAM: 4 GB",
       requisitos3: "SO: Windows 10/11 64-bit",
       medios: [
@@ -228,7 +228,10 @@ const DetallesPage = () => {
       ],
     },
   ];
-
+  const navegacion = useNavigate();
+  const handleComprar = () => {
+    navegacion("/comprar");
+  };
   const producto = productos.find((item) => item.id === parseInt(id));
 
   if (!producto) {
@@ -343,14 +346,14 @@ const DetallesPage = () => {
               {renderizarContenidoPrincipal()}
 
               <button
-                className="btn btn-primary btn-navegacion btn-anterior"
+                className="btn btn-primary-detalles btn-navegacion btn-anterior"
                 onClick={irAnterior}
               >
                 <i className="fas fa-chevron-left"></i>
               </button>
 
               <button
-                className="btn btn-primary btn-navegacion btn-siguiente"
+                className="btn btn-primary-detalles btn-navegacion btn-siguiente"
                 onClick={irSiguiente}
               >
                 <i className="fas fa-chevron-right"></i>
@@ -402,11 +405,12 @@ const DetallesPage = () => {
             </div>
 
             <div className="d-grid gap-2 d-md-flex mb-4">
-              <button className="btn btn-primary btn-lg flex-fill">
-                COMPRAR AHORA
+              ;
+              <button className="btn btn-primary btn-lg flex-fill" onClick={handleComprar}>
+                Comprar ahora
               </button>
               <button className="botonDeseos btn text-light ">
-                LISTA DE DESEOS
+               lista de deseos
               </button>
             </div>
 
@@ -432,9 +436,9 @@ const DetallesPage = () => {
         <div className="row mt-5">
           <div className="col-12">
             <h3 className="tituloDescripcion ">Descripción Completa</h3>
-            <div className="card">
+            <div className="card-Detalles">
               <div className="Requisitos card-body">
-                <p className="lead" style={{ whiteSpace: "pre-line" }}>
+                <p className="descripcionCompleta" style={{ whiteSpace: "pre-line" }}>
                   {producto.detallesCompletos}
                 </p>
 

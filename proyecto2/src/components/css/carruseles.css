@@ -314,13 +314,13 @@
 .carruseles-button-next {
   right: 10px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .carruseles-button-prev {
-    left: -25px;
+    left: -2 px;
   }
   
   .carruseles-button-next {
-    right: -25px;
+    right: 5px;
   }
 }
 @media (max-width: 1024px) {
