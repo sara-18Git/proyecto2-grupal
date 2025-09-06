@@ -217,11 +217,11 @@ const FormRegister = () => {
       </Form.Group>
 
       <div className="text-center mt-5 d-flex flex-column justify-content-center gap-2 flex-md-row">
-        <Button className="detalles-boton " type="submit">
+        <Button className="forms-boton " type="submit">
           Enviar
         </Button>
 
-        <Button className="detalles-boton" onClick={handleGoHome}>
+        <Button className="forms-boton" onClick={handleGoHome}>
           <>Cancelar</>
         </Button>
       </div>

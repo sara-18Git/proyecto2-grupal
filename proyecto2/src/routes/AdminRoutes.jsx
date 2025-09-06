@@ -6,7 +6,7 @@ const AdminRoutes = () => {
 
   const user = JSON.parse(sessionStorage.getItem("usuario")) || null;
   console.log(user.email);
-  if (user === "saraabigailrobles9@gmail.com") {
+  if (user?.email === "saraabigailrobles9@gmail.com") {
     return <Outlet />;
   } else {
     return <Navigate to="/" />;
