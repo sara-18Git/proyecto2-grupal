@@ -94,11 +94,11 @@ const FormNewPass = () => {
       </Form.Group>
 
       <div className="text-center mt-5">
-        <Button className="detalles-boton" type="submit">
+        <Button className="forms-boton" type="submit">
           Enviar
         </Button>
 
-        <Button className="detalles-boton ms-4" onClick={handleGoHome}>
+        <Button className="forms-boton ms-4" onClick={handleGoHome}>
           <>Cancelar</>
         </Button>
       </div>

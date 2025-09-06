@@ -88,6 +88,12 @@ const formLogin = () => {
       title: "Usuario Logueado",
       icon: "success",
       draggable: true,
+      iconColor: "#8FB7CD",
+      confirmButtonColor: "#8FB7CD",
+      cancelButtonColor: "#d33",
+      customClass: {
+        popup: "small-alert",
+      },
     });
     reset();
     navegate("/");
@@ -137,11 +143,11 @@ const formLogin = () => {
       </Form.Group>
 
       <div className="text-center mt-5 d-flex flex-column justify-content-center gap-2 flex-md-row">
-        <Button className="detalles-boton" type="submit">
+        <Button className="forms-boton mt-3" type="submit">
           Iniciar Sesion
         </Button>
 
-        <Button className="detalles-boton ms-4" onClick={handleGoRegister}>
+        <Button className="forms-boton mt-3" onClick={handleGoRegister}>
           <>Registrarse</>
         </Button>
       </div>

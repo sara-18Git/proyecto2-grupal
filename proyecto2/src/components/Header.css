@@ -12,6 +12,8 @@ div .detalles-boton {
     box-shadow: 0 12px 30px rgba(42, 100, 121, 0.4);
     border: 2px solid #355d76;
     min-width: 150px;
+    transition: all 0.3s ease;
+
 
 }
 
@@ -21,6 +23,29 @@ div .detalles-boton {
     background: linear-gradient(45deg, #355d76, #2a6479);
 }
 
+
+.forms-boton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(42, 100, 121, 0.5);
+    background: linear-gradient(45deg, #355d76, #2a6479);
+}
+
+.forms-boton {
+    background: linear-gradient(45deg, #2a6479, #355d76);
+    color: #8fb7cd;
+    box-shadow: 0 12px 30px rgba(42, 100, 121, 0.4);
+    border: 2px solid #355d76;
+    min-width: 150px;
+    transition: all 0.3s ease;
+
+
+}
+
+.forms-boton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(42, 100, 121, 0.5);
+    background: linear-gradient(45deg, #355d76, #2a6479);
+}
 
 .custom-form {
     border: 2px solid #2a6479;
@@ -51,6 +76,7 @@ div .detalles-boton {
 .custom-navbar {
     max-width: 100%;
     background-color: #010f29 !important;
+/* height: 80px; */
 }
 
 
@@ -58,6 +84,7 @@ div .detalles-boton {
     color: #8FB7CD;
     margin-right: 8px;
     width: 20px;
+    font-size: 120px;
 }
 
 .titulo-pagina {
@@ -81,7 +108,6 @@ div .detalles-boton {
 .my-icon:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    margin-right: 12px;
 }
 
 .error-page {
@@ -102,7 +128,7 @@ div .detalles-boton {
 
 .logo-nav {
     width: 100px;
-    height: auto;
+    /* height: 100px; */
 }
 
 .toggle-blanco {
@@ -116,9 +142,9 @@ div .detalles-boton {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.campo-busqueda{
+.campo-busqueda {
     width: 200px;
-  font-size: 14px;
-  padding: 6px 10px;
+    font-size: 14px;
+    padding: 6px 10px;
 
 }
