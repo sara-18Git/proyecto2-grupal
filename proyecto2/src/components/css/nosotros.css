@@ -1,0 +1,234 @@
+/* Estilos para el contenedor de la imagen */
+.carruseles-image-container-nosotros {
+  /* Set a fixed size for the container */
+  width: 180px; /* Adjust this value as needed */
+  height: 180px; /* Make it a perfect circle */
+  overflow: hidden;
+  border-radius: 50%; /* Use 50% for a perfect circle */
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carruseles-image-nosotros {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* This is crucial for filling the container without stretching */
+  transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse sobre el contenedor */
+.carruseles-card-nosotros:hover .carruseles-image-container-nosotros {
+  transform: scale(
+    1.03
+  ); /* Un ligero zoom al contenedor para un efecto más envolvente */
+}
+
+/* Efecto al pasar el mouse sobre la imagen */
+.carruseles-card-nosotros:hover .carruseles-image-nosotros {
+  transform: scale(1.05); /* Pequeño zoom a la imagen */
+}
+
+/* Contorno dorado al pasar el mouse */
+.carruseles-card-nosotros:hover .carruseles-image-container-nosotros {
+  box-shadow: 0 0 30px 5px gold; /* Sombra dorada exterior */
+  border: 2px solid gold; /* Borde dorado */
+}
+
+
+
+.carruseles-heading-nosotros {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color:#8fb7cd;
+  text-shadow:
+    -1px -1px 0 #8fb7cd,  
+     1px -1px 0 #8fb7cd,
+    -1px  1px 0 #8fb7cd,
+     1px  1px 0 #8fb7cd,
+     0 0 10px #8fb7cd,
+     0 0 20px #8fb7cd,
+     0 0 30px #0ff;
+  animation: breathing 3s ease-in-out infinite;
+}
+
+.carruseles-Titulo-nosotros {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 40px;
+  color:#8fb7cd;
+  text-shadow:
+    -1px -1px 0 #8fb7cd,  
+     1px -1px 0 #8fb7cd,
+    -1px  1px 0 #8fb7cd,
+     1px  1px 0 #8fb7cd,
+     0 0 10px #8fb7cd,
+     0 0 20px #8fb7cd,
+     0 0 30px #0ff;
+  animation: breathing 3s ease-in-out infinite;
+}
+
+.contenedorTexto-nosotros  {
+  display: inline-block;
+  background: linear-gradient(45deg, #2a6479, #355d76);
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(42, 100, 121, 0.4);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8fb7cd;
+  border: 1px solid #355d76;
+}
+
+.contenedorTexto-nosotros {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #8fb7cd;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding-right: 20px;
+}
+.text-tarjeta-nosotros{ color: #8fb7cd;font-size: 20px}
+/* Responsive */
+@media (max-width: 968px) {
+  .carousel-container-nosotros {
+    max-width: 90%;
+  }
+  .banner-title {
+    font-size: 36px;
+    letter-spacing: 3px;
+  }
+
+  .banner-subtitle {
+    font-size: 26px;
+  }
+  .alice-carousel__dots {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container-nosotros {
+    padding: 15px;
+    margin: 20px auto;
+  }
+  .banner-text-left {
+    margin-top: 25px;
+    margin-left: 25px;
+  }
+
+  .banner-title {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+
+  .banner-subtitle {
+    font-size: 22px;
+  }
+
+  .ver-mas-btn {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+  .carousel-wrapper {
+    border-radius: 12px;
+  }
+
+  .carousel-image,
+  .youtube-video-container {
+    height: 350px;
+  }
+
+  .text-content {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .custom-prev-btn,
+  .custom-next-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-prev-btn {
+    left: 10px;
+  }
+
+  .custom-next-btn {
+    right: 10px;
+  }
+
+  .alice-carousel__dots {
+    width: 90%;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image-nosotros {
+    height: 250px;
+  }
+  .carousel-container-nosotros {
+    padding: 15px;
+    margin-top: 100px;
+  }
+  .banner-text-left {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .banner-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .banner-subtitle {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .ver-mas-btn {
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .text-content {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .custom-prev-btn,
+  .custom-next-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .image-credit {
+    font-size: 10px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .carousel-title {
+    font-size: 24px;
+  }
+
+  .alice-carousel__dots {
+    width: 95%;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-container-nosotros {
+    padding: 15px;
+    margin-top: 100px;
+  }
+}
