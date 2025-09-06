@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { obtenerUsuariosDeLocalStorage } from "../../utils/localStorage.users";
 
@@ -28,10 +29,10 @@ const formLogin = () => {
   const handleNewPassword = () => {
     Swal.fire({
       icon: "success",
-      iconColor: "#8FB7CD",
+      iconColor: "#2a6479",
       title: "¡Listo!",
       text: "Tu contraseña está en proceso de ser recuperada",
-      confirmButtonColor: "#8FB7CD", // azul
+      confirmButtonColor: "#2a6479", // azul
       cancelButtonColor: "#d33", // rojo
     });
     navegate("/");
@@ -52,7 +53,14 @@ const formLogin = () => {
         icon: "error",
         title: "Resgistrate!",
         text: "El usuario no existe en la base de datos",
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
       });
+      reset();
       return;
     }
     if (usuario.password != data.password) {
@@ -60,16 +68,14 @@ const formLogin = () => {
         icon: "warning",
         title: "Contraseña incorrecta",
         text: "Despues de tres intento incorrectos se bloqueara el usuario",
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
       });
-      return;
-    }
-
-    if (data.email === "amelie@gmail.com") {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "El usuario no existe en la base de datos",
-      });
+      reset();
       return;
     }
     const usuarioLogueado = {
@@ -89,8 +95,8 @@ const formLogin = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
+      <Form.Group className="label mb-3" controlId="formBasicEmail">
+        <Form.Label>Correo electrónico</Form.Label>
         <Form.Control
           type="email"
           placeholder="Ingrese su email"
@@ -109,7 +115,7 @@ const formLogin = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="label mb-3" controlId="formBasicPassword">
         <Form.Label>Contraseña</Form.Label>
         <Form.Control
           type="password"
@@ -130,17 +136,13 @@ const formLogin = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <div className="text-center mt-5">
+      <div className="text-center mt-5 d-flex flex-column justify-content-center gap-2 flex-md-row">
         <Button className="detalles-boton" type="submit">
           Iniciar Sesion
         </Button>
 
         <Button className="detalles-boton ms-4" onClick={handleGoRegister}>
           <>Registrarse</>
-        </Button>
-
-        <Button className="detalles-boton ms-4" onClick={handleNewPassword}>
-          <>Recuperar contraseña</>
         </Button>
       </div>
     </Form>

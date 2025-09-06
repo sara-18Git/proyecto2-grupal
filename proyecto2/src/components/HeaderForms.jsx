@@ -9,18 +9,23 @@ const HeaderForms = () => {
   return (
     <Navbar sticky="top" className="custom-navbar" data-bs-theme="dark">
       <Container className="custom-navbar">
-        <Nav.Link as={NavLink} to="/">
-          <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
-        </Nav.Link>
-
-        <Nav>
+        <div className="d-flex justify-content-center align-items-center">
           <Nav.Link as={NavLink} to="/">
+            <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
+          </Nav.Link>
+
+          <Navbar.Brand className="titulo-pagina text-start ms-0">
+            Game Hub
+          </Navbar.Brand>
+          {/* <Nav.Link as={NavLink} to="/">
             <div className="my-icon">
               {" "}
               <FaHome className="icono-detaills" />
             </div>
-          </Nav.Link>
-        </Nav>
+          </Nav.Link> */}
+        </div>
+
+        <Nav></Nav>
       </Container>
     </Navbar>
   );
