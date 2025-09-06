@@ -11,6 +11,8 @@ import TeamPage from "../pages/TeamPage";
 import ContactPage from "../pages/ContactPage";
 import LayoutConNav from "../layouts/LayoutConNav";
 import LayoutNavForms from "../layouts/LayoutNavForms";
+import NewPassPage from "../pages/NewPassPage";
+import { BsNewspaper } from "react-icons/bs";
 
 const AppRoutes = () => {
   return (
@@ -31,6 +33,8 @@ const AppRoutes = () => {
           path="/registrarse"
           element={<RegisterPage></RegisterPage>}
         ></Route>
+
+        <Route path="/password" element={<NewPassPage></NewPassPage>}></Route>
 
         <Route path="/team" element={<TeamPage></TeamPage>}></Route>
 

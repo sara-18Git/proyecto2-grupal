@@ -48,7 +48,14 @@ const FormRegister = () => {
         icon: "question",
         title: "Olvidaste tu contraseña?..",
         text: "El usuario ya existe en la base de datos",
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
       });
+
       reset();
       return;
     }
@@ -56,8 +63,15 @@ const FormRegister = () => {
     try {
       if (data.password != data.confirmPassword) {
         Swal.fire({
-          title: "sus contraseñas no coinciden",
-          icon: "warning",
+          icon: "error",
+          title: "Las contraseñas deben ser iguales!",
+          text: "Intenta nuevamente",
+          iconColor: "#8FB7CD",
+          confirmButtonColor: "#8FB7CD",
+          cancelButtonColor: "#d33",
+          customClass: {
+            popup: "small-alert",
+          },
         });
         return;
       }
@@ -80,6 +94,12 @@ const FormRegister = () => {
         icon: "success",
         title: "El formulario ha sido enviado",
         showConfirmButton: false,
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
         timer: 1500,
       });
       reset();
@@ -88,6 +108,12 @@ const FormRegister = () => {
       Swal.fire({
         title: "Error al registrar usuario",
         icon: "error",
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
       });
       console.error(error);
     }
@@ -95,7 +121,7 @@ const FormRegister = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="label mb-3" controlId="formUserName">
         <Form.Label>Nombre de Usuario</Form.Label>
         <Form.Control
           type="text"
@@ -125,7 +151,7 @@ const FormRegister = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="label mb-3" controlId="formBasicEmail">
         <Form.Label>Correo electronico</Form.Label>
         <Form.Control
           type="email"
@@ -146,7 +172,7 @@ const FormRegister = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="label mb-3" controlId="formBasicPassword">
         <Form.Label>Contraseña</Form.Label>
         <Form.Control
           type="password"
@@ -168,7 +194,7 @@ const FormRegister = () => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="label mb-3" controlId="formConfirmPassword">
         <Form.Label>Confirmar contraseña</Form.Label>
         <Form.Control
           type="password"

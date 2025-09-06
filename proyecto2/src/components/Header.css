@@ -1,39 +1,56 @@
 .my-icon {
-    /* color:  #010f29 !important; */
     color: #8FB7CD !important;
     margin-right: 25px;
     font-size: 15px;
     vertical-align: middle;
-
+    transition: transform 0.3s ease;
 }
 
 .detalles-boton {
-  color: #2a6479;              /* Color del texto */
-  border: 2px solid #2a6479;   /* Borde visible del mismo color */
-  background-color: #010f29   !important;;   /*Fondo transparente para destacar el borde */
-  padding: 8px 16px;           /* Espaciado interno */
-  border-radius: 4px;          /* Bordes ligeramente redondeados */
-  font-weight: bold;           /* Texto más marcado */
-  cursor: pointer;             /* Cursor tipo mano al pasar */
-  /*transition: all 0.3s ease;   /* Animación suave al interactuar */
+    background: linear-gradient(45deg, #2a6479, #355d76);
+    color: #8fb7cd;
+    box-shadow: 0 12px 30px rgba(42, 100, 121, 0.4);
+    border: 2px solid #355d76;
+    min-width: 150px;
+
 }
 
-.boton-personalizado:hover {
-  background-color: #010f29   !important;  /* Fondo del mismo color al pasar el mouse */
-  color: white;                /* Texto blanco para contraste */
+.detalles-boton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(42, 100, 121, 0.5);
+    background: linear-gradient(45deg, #355d76, #2a6479);
 }
-
 
 
 .custom-form {
-    background-color:  #8FB7CD !important;
-    
+    border: 2px solid #2a6479;
+    box-shadow: 0 0 25px rgba(42, 100, 121, 0.4);
 }
+
+.titulos-form {
+    text-align: center;
+    color: #8FB7CD !important;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 25px;
+}
+
+.label {
+    text-align: left;
+    display: block;
+    color: #8FB7CD;
+}
+
+.link-color {
+    color: #8FB7CD;
+    text-decoration: none;
+    /* opcional: quita el subrayado */
+}
+
 
 .custom-navbar {
     max-width: 100%;
     background-color: #010f29 !important;
-
 }
 
 
@@ -41,9 +58,20 @@
     color: #8FB7CD;
     margin-right: 8px;
     width: 20px;
-    /* font-size: 100px;  */
 }
 
+.titulo-pagina {
+    margin-top: 25px;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-shadow:
+        0 0 5px #6C7377,
+        0 0 10px rgba(26, 31, 34, 0.7),
+        0 0 15px rgba(2, 27, 27, 0.5);
+    animation: breathing 4s ease-in-out infinite;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 
 .my-icon svg {
     font-size: 30px;
@@ -51,8 +79,7 @@
 
 
 .my-icon:hover {
-
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: transform 0.3s ease;
     margin-right: 12px;
 }
@@ -73,20 +100,25 @@
 }
 
 
-
 .logo-nav {
     width: 100px;
     height: auto;
 }
 
-
 .toggle-blanco {
-  background-color: transparent; /* si no querés fondo */
-  border: 1px solid white;       /* borde blanco */
-  color: white;                  /* ícono blanco */
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+
 }
 
 .toggle-blanco .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+.campo-busqueda{
+    width: 200px;
+  font-size: 14px;
+  padding: 6px 10px;
+
+}

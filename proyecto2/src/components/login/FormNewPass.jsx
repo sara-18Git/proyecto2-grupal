@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { obtenerUsuariosDeLocalStorage } from "../../utils/localStorage.users";
 
 const FormNewPass = () => {
   const {
@@ -29,22 +30,49 @@ const FormNewPass = () => {
   function onSubmit(data) {
     console.log(data);
 
+    const usuariosDeLaDb = obtenerUsuariosDeLocalStorage();
+    const usuario = usuariosDeLaDb.find(
+      (usuarioLS) => usuarioLS.email === data.email
+    );
+
+    console.log(usuario);
+    if (!usuario) {
+      Swal.fire({
+        icon: "question",
+        title: "El usuario no existe..",
+        text: "Queres registrarte?",
+        iconColor: "#8FB7CD",
+        confirmButtonColor: "#8FB7CD",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
+      });
+
+      reset();
+      return;
+    }
+
     Swal.fire({
       position: "top-end",
       icon: "success",
       title: "El formulario ha sido enviado",
       showConfirmButton: false,
       timer: 1500,
+      iconColor: "#8FB7CD",
+      confirmButtonColor: "#8FB7CD",
+      cancelButtonColor: "#d33",
+      customClass: {
+        popup: "small-alert",
+      },
     });
     reset();
-    navegacion("/"); 
+    navegacion("/");
   }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
- 
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="label mb-3" controlId="formBasicEmail">
         <Form.Label>Correo electronico</Form.Label>
         <Form.Control
           type="email"
@@ -64,8 +92,6 @@ const FormNewPass = () => {
           {errors.email?.message}
         </Form.Control.Feedback>
       </Form.Group>
-
-
 
       <div className="text-center mt-5">
         <Button className="detalles-boton" type="submit">
