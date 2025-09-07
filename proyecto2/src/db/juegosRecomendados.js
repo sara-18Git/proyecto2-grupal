@@ -58,12 +58,12 @@ export const itemsRecomendados = [
   {
     id: 12,
     image:
-      "https://s3.amazonaws.com/gameopedia_covers/covers/292397/2d8741d405211526a08f7e8c8a8b22db.jpeg",
-    title: "bloodborne",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfGCf98td_1NMhbHiPbwKB9BTpMOsS1uQa2CGlVHL95upC5AsI",
+    title: "Hollow Knight",
     description:
-      "Caza bestias en Yharnam, una ciudad gótica maldita. Juego de acción rápido y atmosférico de FromSoftware.",
-    price: "$12.000ARS",
-    category: "Survival/Pelea",
+      "juego de aventura y acción 2D estilo Metroidvania donde un caballero insectoide explora el vasto y caído reino de Hallownest,.",
+    price: "$4.000ARS",
+    category: "Metroidvania/Pelea/Indie",
     rol: "Recomendado",
   },
 ];

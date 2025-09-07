@@ -13,13 +13,13 @@ export const itemsDestacados = [
   },
   {
     id: 2,
-    image:
-      "https://gamerspotstorage01.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/05/23134358/GTAV-650x914.jpg",
-    title: "GTA 5",
+      image:
+      "https://cdn.wikimg.net/en/hkwiki/images/thumb/1/13/Silksong_cover.jpg/300px-Silksong_cover.jpg",
+    title: "Hollow Knight: Silksong",
     description:
-      "Explora una ciudad gigantesca, comete crímenes y elige entre tres protagonistas en esta épica aventura.",
-    price: "$35.500ARS",
-    category: "Accion",
+      "Explora, lucha y sobrevive mientras asciendes a la cima de un vasto reino gobernado por la seda y el canto.",
+    price: "$20.000ARS",
+    category: "Metroidvania/Pelea/Indie",
     rol: "destacados",
   },
   {
@@ -35,13 +35,13 @@ export const itemsDestacados = [
   },
   {
     id: 4,
-    image:
-      "https://image.api.playstation.com/vulcan/ap/rnd/202311/1717/0124532002d9b1295418e44465ceb3d3e9c1718416800efb.png",
-    title: "The Last of Us Parte II Remaster",
+   image:
+      "https://gamerspotstorage01.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/05/23134358/GTAV-650x914.jpg",
+    title: "GTA 5",
     description:
-      "Experiencia emocional postapocalíptica con gráficos mejorados y jugabilidad optimizada para PC.",
-    price: "$35.000ARS",
-    category: "Accion/Aventura",
+      "Explora una ciudad gigantesca, comete crímenes y elige entre tres protagonistas en esta épica aventura.",
+    price: "$35.500ARS",
+    category: "Accion",
     rol: "destacados",
   },
   {

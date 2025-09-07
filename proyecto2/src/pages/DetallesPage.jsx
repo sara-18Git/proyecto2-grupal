@@ -45,36 +45,38 @@ const DetallesPage = () => {
     },
     {
       id: 2,
-      title: "Grand Theft Auto V",
+      title: "Hollow Knight: Silksong",
       description:
-        "Explora una ciudad gigantesca, comete crímenes y elige entre tres protagonistas en esta épica aventura.",
-      price: "$35.500ARS",
-      category: "Accion",
+        "¡Descubre un vasto reino embrujado en Hollow Knight: Silksong! Explora, lucha y sobrevive mientras asciendes a la cima de un vasto reino gobernado por la seda y el canto.",
+      price: "$20.000ARS",
+      category: " Metroidvania/Pelea/Indie",
       rating: 5.0,
-      detallesCompletos: ` Grand Theft Auto V es un videojuego de acción y aventura de mundo abierto ambientado en la metrópoli ficticia de Los Santos y las zonas rurales del condado de Blaine, basados en Los Ángeles y el sur de California. La narrativa sigue a tres protagonistas principales: el ladrón retirado Michael De Santa, el gangster callejero Franklin Clinton y el traficante de armas psicótico Trevor Philips; cuyas historias se entrelazan mientras realizan una serie de peligrosos golpes. El juego ofrece una crítica social satírica de la cultura estadounidense moderna, al tiempo que proporciona una experiencia masiva que combina la historia cinematográfica con la libertad de explorar un mundo vasto y lleno de detalles. Los jugadores pueden nadar, volar, conducir una inmensa variedad de vehículos y participar en numerosas actividades secundarias, desde tenis y golf hasta invertir en la bolsa de valores. Su modo en línea, GTA Online, expande la experiencia permitiendo a los jugadores crear sus propios personajes y cooperar o competir en un mundo persistente en constante evolución.`,
-      desarrollador: "Rockstar Games",
-      fechaLanzamiento: "17 de Septiembre, 2013",
-      requisitos: "Windows 8.1 64-Bit, 4 GB RAM, ",
-      requisitos2:
-        "Intel Core 2 Quad CPU Q6600 @ 2.40GHz o AMD Phenom 9850 Quad-Core Processor",
-      requisitos3: "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
+      detallesCompletos: `Hollow Knight: Silksong es el tan esperado seguimiento del aclamado Hollow Knight (2017). En lugar de controlar al Caballero, esta vez tomas el papel de Hornet, la princesa protectora de Hallownest, que ha sido capturada y llevada a un reino completamente nuevo, elevado y brillante: Pharloom.
+La premisa es descubrir por qué fuiste llevada allí y ascender hasta la cima de la capital del reino, la ciudad de seda de Coralina.`,
+      desarrollador: "Team Cherry",
+      fechaLanzamiento: "4 de Septiembre, 2025",
+      requisitos:
+        "SO: Windows 7 (64-bit),Procesador: Intel Core i5-6500 o AMD equivalente",
+      requisitos2: "Memoria: 8 GB de RAM",
+      requisitos3:
+        "Gráficos: GPU con 2GB de VRAM (GeForce GTX 950 / Radeon R7 370",
       medios: [
         {
           type: "image",
-          url: "https://image.api.playstation.com/vulcan/ap/rnd/202203/0911/VIB0SeEj9vT6DTv7P4thJLZi.jpg",
+          url: "https://cdn.mos.cms.futurecdn.net/KsYCohcpXQfN2gMBPRtdHK-650-80.jpg.webp",
         },
         {
           type: "image",
-          url: "https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/478725076/gta-v-walkthrough-grand-theft-auto-v-windows.jpg",
+          url: "https://static0.srcdn.com/wordpress/wp-content/uploads/2025/09/silksong-s-hornet-standing-next-to-a-small-bug-character-playing-and-singing-at-a-gate.jpg?q=49&fit=crop&w=1100&h=618&dpr=2",
         },
         {
           type: "video",
-          url: "/videos/Grand-Theft-Auto V_ The-Official-Trailer.mp4",
-          thumbnail: "/images/GTA5.webp",
+          url: "/videos/silkS.mp4",
+          thumbnail: "/images/silk.jpg",
         },
         {
           type: "image",
-          url: "https://wallpapers.com/images/featured/fondods-de-gta-5-o5zqq1pkpmdbw2yt.webp",
+          url: "https://static0.thegamerimages.com/wordpress/wp-content/uploads/wm/2025/09/hollowknightsilksongredplants-1.jpg?q=70&fit=crop&w=1100&h=618&dpr=1",
         },
       ],
     },
@@ -114,37 +116,36 @@ const DetallesPage = () => {
     },
     {
       id: 4,
-      title: "The Last of Us Parte II Remaster",
+      title: "Grand Theft Auto V",
       description:
-        "Experiencia emocional postapocalíptica con gráficos mejorados y jugabilidad optimizada para PC.",
-      price: "$55.000ARS",
-      category: "Accion/Aventura",
-      rating: 4.0,
-      detallesCompletos: `The Last of Us Part II Remastered es la versión definitiva y mejorada del aclamado juego de acción y supervivencia de Naughty Dog, diseñada para PlayStation 5. Esta edición no solo lleva la experiencia visual a nuevos horizontes con resoluciones 4K, tasas de cuadros mejoradas y tiempos de carga drastically reducidos gracias al SSD, sino que también enriquece la profunda y polarizante narrativa con contenido adicional. La historia sigue a Ellie en su búsqueda implacable de venganza en un mundo post-apocalíptico que cycle de violencia, enfrentándola a consecuencias devastadoras y forzándola a cuestionar sus propias acciones. El juego amplía su jugabilidad con mecánicas de sigilo y combate más refinadas, entornos más expansivos y una inteligencia artificial mejorada. Incluye nuevos modos como "No Return", un roguelike de supervivencia con personajes jugables únicos, niveles acelerados y modificadores; Lost Levels con comentarios de los desarrolladores; y el modo Guitar Free Play, permitiendo a los jugadores tocar canciones con una variedad de instrumentos. Es una experiencia inmersiva y desgarradora que desafía las nociones de moralidad y redención.`,
-      desarrollador: "Naughty Dog",
-      fechaLanzamiento: "19 de Enero, 2024",
-      requisitos:
-        "SO: Windows 10/11 64-bit,Procesador: Intel Core i7-9700K / AMD Ryzen 7 3700X",
+        "Explora una ciudad gigantesca, comete crímenes y elige entre tres protagonistas en esta épica aventura.",
+      price: "$35.500ARS",
+      category: "Accion",
+      rating: 5.0,
+      detallesCompletos: ` Grand Theft Auto V es un videojuego de acción y aventura de mundo abierto ambientado en la metrópoli ficticia de Los Santos y las zonas rurales del condado de Blaine, basados en Los Ángeles y el sur de California. La narrativa sigue a tres protagonistas principales: el ladrón retirado Michael De Santa, el gangster callejero Franklin Clinton y el traficante de armas psicótico Trevor Philips; cuyas historias se entrelazan mientras realizan una serie de peligrosos golpes. El juego ofrece una crítica social satírica de la cultura estadounidense moderna, al tiempo que proporciona una experiencia masiva que combina la historia cinematográfica con la libertad de explorar un mundo vasto y lleno de detalles. Los jugadores pueden nadar, volar, conducir una inmensa variedad de vehículos y participar en numerosas actividades secundarias, desde tenis y golf hasta invertir en la bolsa de valores. Su modo en línea, GTA Online, expande la experiencia permitiendo a los jugadores crear sus propios personajes y cooperar o competir en un mundo persistente en constante evolución.`,
+      desarrollador: "Rockstar Games",
+      fechaLanzamiento: "17 de Septiembre, 2013",
+      requisitos: "Windows 8.1 64-Bit, 4 GB RAM, ",
       requisitos2:
-        "Memoria: 16 GB RAM,Gráficos: NVIDIA RTX 3070 / AMD RX 6700 XT",
-      requisitos3: "Almacenamiento: 100 GB SSD (NVMe recomendado)",
+        "Intel Core 2 Quad CPU Q6600 @ 2.40GHz o AMD Phenom 9850 Quad-Core Processor",
+      requisitos3: "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB",
       medios: [
         {
           type: "image",
-          url: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/12/last-us-parte-ii-remastered-3242670.jpg?tf=1200x",
+          url: "https://image.api.playstation.com/vulcan/ap/rnd/202203/0911/VIB0SeEj9vT6DTv7P4thJLZi.jpg",
         },
         {
           type: "image",
-          url: "https://sm.ign.com/t/ign_fr/video/t/the-last-o/the-last-of-us-part-ii-remastered-no-return-mode-trailer_8he1.1200.jpg",
+          url: "https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/b3d17a4e-96bf-11e6-a0d8-00163ed833e7/478725076/gta-v-walkthrough-grand-theft-auto-v-windows.jpg",
         },
         {
           type: "video",
-          url: "/videos/Tlou2.mp4",
-          thumbnail: "/images/tlou.jpg",
+          url: "/videos/Grand-Theft-Auto V_ The-Official-Trailer.mp4",
+          thumbnail: "/images/GTA5.webp",
         },
         {
           type: "image",
-          url: "https://i.guim.co.uk/img/media/3fb3728103d60af44b9ff57c3ee26f21397d671a/101_0_1875_1125/master/1875.jpg?width=620&dpr=1&s=none&crop=none",
+          url: "https://wallpapers.com/images/featured/fondods-de-gta-5-o5zqq1pkpmdbw2yt.webp",
         },
       ],
     },
@@ -400,41 +401,40 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
     },
     {
       id: 12,
-      title: "bloodborne ",
+      title: "Hollow Knight ",
       description:
-        "Caza bestias en Yharnam, una ciudad gótica maldita. Juego de acción rápido y atmosférico de FromSoftware.",
-      price: "$12.000ARS",
-      category: "Survival/Pelea",
+        "juego de aventura y acción 2D estilo Metroidvania donde un caballero insectoide explora el vasto y caído reino de Hallownest.",
+      price: "$4.000ARS",
+      category: "Metroidvania/Pelea/Indie",
       rating: 5.0,
-      detallesCompletos: `Bloodborne es un action RPG de atmósfera opresiva y gameplay desafiante, que se ha convertido en un título de culto y en uno de los exclusivos más aclamados de PlayStation.
-
-La historia te lleva a la ciudad gótica y decrépita de Yharnam, famosa por una terapia médica especial basada en la "sangre milagrosa". Tu personaje, un viajero, llega en busca de este remedio y se ve arrastrado a una caza de pesadilla en una noche conocida como "La Noche de la Caza". Pronto descubrirás que Yharnam está plagada por una plaga bestial que transforma a sus habitantes en criaturas grotescas, y que los secretos que esconde la ciudad son mucho más lovecraftianos y aterradores de lo que imaginabas.`,
-      desarrollador: "FromSoftware",
-      fechaLanzamiento: " 24 de marzo de 2015",
+      detallesCompletos: `Tú encarnas al Caballero, un pequeño y misterioso guerrero silencioso que viaja a la ruinosa ciudad de Dirtmouth y desciende al vasto reino subterráneo de Hallownest. Este reino, una vez próspero, ha sido consumido por una plaga supernatural que enloquece a sus habitantes. Tu misión es explorar sus profundidades, desentrañar sus secretos y detener la fuente de la infección.`,
+      desarrollador: "Team Cherry",
+      fechaLanzamiento: " 24 de Febrero de 2017",
       requisitos:
-        "SO: Windows 10 (64-bit)CPU: Intel Core i7-4770K / AMD Ryzen 5 1500X",
-      requisitos2: "RAM: 12 GB",
-      requisitos3: "GPU: NVIDIA GTX 1060 6GB / AMD Radeon RX 480 4GB",
+        "SO: Windows 7 (64-bit),Procesador: Intel Core 2 Duo E5200",
+      requisitos2: "Memoria: 4 GB de RAM",
+      requisitos3: "Gráficos: GeForce 9800GTX+ (1GB)",
       medios: [
         {
           type: "image",
-          url: "https://media.wired.com/photos/5955c1dc5992c54331ac192f/3:2/w_1600,c_limit/bloodborne_the_old_hunters_V2.jpg",
+          url: "https://media.gq.com/photos/5b4f85bf80d4544fbe01ecc9/16:9/w_1600,c_limit/hollow-night-review-gq-1.jpg",
         },
         {
           type: "image",
-          url: "https://cdn.mos.cms.futurecdn.net/7VhmTtLnqqRCLrbK5cPUdn-650-80.jpg.webp",
+          url: "https://i.blogs.es/18b8fc/hollow-knight-hidden-dreams/1366_2000.webp",
         },
         {
           type: "video",
-          url: "/videos/BLOODBORNE.mp4",
-          thumbnail: "/images/blood.jpeg",
+          url: "/videos/Hollow.mp4",
+          thumbnail: "/images/hollow.jpg",
         },
         {
           type: "image",
-          url: "https://niveloculto.com/wp-content/uploads/2015/04/bloodborne-01.jpg",
+          url: "https://i.blogs.es/e2d6e7/maxresdefault/1366_2000.webp",
         },
       ],
     },
+    
   ];
   const navegacion = useNavigate();
   const handleComprar = () => {
@@ -626,12 +626,6 @@ La historia te lleva a la ciudad gótica y decrépita de Yharnam, famosa por una
             </div>
 
             <div className="info-producto p-3rounded">
-              <div className="mb-2">
-                <strong>Activación:</strong>
-                <span className="ms-2">
-                  Ve a Configuración para activar Windows
-                </span>
-              </div>
               <div className="mb-2">
                 <strong>Desarrollador:</strong>
                 <span className="ms-2">{producto.desarrollador}</span>
