@@ -67,6 +67,7 @@ export default function TablaJuegos() {
         <thead>
           <tr>
             <th style={{ minWidth: 80 }}>#</th>
+            <th>Rol</th>
             <th>Título</th>
             <th>Descripción</th>
             <th>Precio</th>
