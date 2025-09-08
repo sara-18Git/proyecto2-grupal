@@ -1,0 +1,157 @@
+.footer-container {
+  background: linear-gradient(to right, #0a1a5c, #040e3b);
+  color: #8fb7cd;
+  padding: 40px 0 20px;
+  margin-top: auto;
+}
+
+.grupo-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.box {
+  flex: 1;
+  min-width: 250px;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.box figure {
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+.box h2 {
+  color: #4ecdc4;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.box h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #4ecdc4;
+}
+
+.box nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box nav ul li {
+  margin: 12px 0;
+}
+
+.box nav ul li a {
+  color: #8fb7cd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.box nav ul li a:hover {
+  color: #4ecdc4;
+  transform: translateX(5px);
+}
+
+.red-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.red-social a {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.red-social a:hover {
+  transform: translateY(-5px);
+}
+
+.red-social img {
+  filter: grayscale(0.3);
+  transition: filter 0.3s ease;
+}
+
+.red-social a:hover img {
+  filter: grayscale(0);
+}
+
+.grupo-2 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(143, 183, 205, 0.3);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grupo-2 small {
+  font-size: 0.9rem;
+}
+
+.grupo-2 b {
+  color: #4ecdc4;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .grupo-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .red-social {
+    justify-content: space-around;
+    max-width: 250px;
+    margin: 20px auto 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-container {
+    padding: 30px 0 15px;
+  }
+
+  .box {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .red-social {
+    gap: 10px;
+  }
+
+  .red-social img {
+    width: 40px;
+    height: 40px;
+  }
+}
