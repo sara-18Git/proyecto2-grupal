@@ -8,11 +8,27 @@ import LogoNav from "../assets/logo.png";
 import "../components/header.css";
 
 const Header = () => {
-  const navegacion = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleBuscar = () => {
-  //   navegacion("/rutaInexistente");
-  // };
+  const handleCartClick = () => {
+    Swal.fire({
+      title: "Para cargar el carrito primero debes iniciar sesión",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Iniciar Sesión",
+      cancelButtonText: "Cancelar",
+      iconColor: "#042550ff",
+      confirmButtonColor: "#042550ff",
+      cancelButtonColor: "#d33",
+      customClass: {
+        popup: "small-alert",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/login");
+      }
+    });
+  };
 
   const user = JSON.parse(sessionStorage.getItem("usuario")) || null;
   function logout() {
@@ -23,8 +39,8 @@ const Header = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Si",
-      iconColor: "#8FB7CD",
-      confirmButtonColor: "#8FB7CD",
+      iconColor: "#042550ff",
+      confirmButtonColor: "#042550ff",
       cancelButtonColor: "#d33",
       customClass: {
         popup: "small-alert",
@@ -34,15 +50,15 @@ const Header = () => {
         Swal.fire({
           title: "Sesion cerrada!",
           icon: "success",
-          iconColor: "#8FB7CD",
-          confirmButtonColor: "#8FB7CD",
+          iconColor: "#042550ff",
+          confirmButtonColor: "#042550ff",
           cancelButtonColor: "#d33",
           customClass: {
             popup: "small-alert",
           },
         });
         sessionStorage.removeItem("usuario");
-        navegacion("/");
+        navigate("/");
       }
     });
   }
@@ -55,8 +71,6 @@ const Header = () => {
             <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
           </Nav.Link>
 
-          {/* <Navbar.Brand className="titulo-pagina">GameHub</Navbar.Brand> */}
-
           <Nav.Link as={NavLink} to="/buscar" className="ms-3">
             <div className="my-icon">
               {" "}
@@ -64,24 +78,18 @@ const Header = () => {
             </div>
           </Nav.Link>
 
-          <Nav.Link as={NavLink} to="/carrito">
+          <Nav.Link onClick={handleCartClick}>
             <div className="my-icon">
-              {" "}
               <FaShoppingCart className="icono-detaills" />
             </div>
           </Nav.Link>
 
-          {/* <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="campo-busqueda me-2"
-              aria-label="Search"
-            />
-            <Button variant="secondary" onClick={handleBuscar}>
-              Buscar
-            </Button>
-          </Form> */}
+          {/* <Nav.Link as={NavLink} to="/login">
+            <div className="my-icon">
+              {" "}
+              <FaShoppingCart className="icono-detaills" />
+            </div>
+          </Nav.Link> */}
         </div>
 
         <div className="ms-auto">
@@ -101,7 +109,7 @@ const Header = () => {
               <p className="my-icon mb-0">Contactos</p>
             </Nav.Link>
 
-            {user ? (
+            {user?.email === "saraabigailrobles9@gmail.com" ? (
               <>
                 <Nav.Link as={NavLink} to="/admin">
                   <div className="my-icon mb-0">
@@ -125,7 +133,6 @@ const Header = () => {
                 </Nav.Link>
               </>
             )}
-            {/* </Nav> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
