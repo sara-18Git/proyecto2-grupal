@@ -13,8 +13,6 @@ div .detalles-boton {
     border: 2px solid #355d76;
     min-width: 150px;
     transition: all 0.3s ease;
-
-
 }
 
 .detalles-boton:hover {
@@ -69,14 +67,12 @@ div .detalles-boton {
 .link-color {
     color: #8FB7CD;
     text-decoration: none;
-    /* opcional: quita el subrayado */
 }
 
 
 .custom-navbar {
     max-width: 100%;
     background-color: #010f29 !important;
-/* height: 80px; */
 }
 
 
@@ -85,19 +81,6 @@ div .detalles-boton {
     margin-right: 8px;
     width: 20px;
     font-size: 120px;
-}
-
-.titulo-pagina {
-    margin-top: 25px;
-    font-size: 50px;
-    color: #FFFFFF;
-    text-shadow:
-        0 0 5px #6C7377,
-        0 0 10px rgba(26, 31, 34, 0.7),
-        0 0 15px rgba(2, 27, 27, 0.5);
-    animation: breathing 4s ease-in-out infinite;
-    font-weight: 600;
-    letter-spacing: 1px;
 }
 
 .my-icon svg {
@@ -110,25 +93,24 @@ div .detalles-boton {
     transition: transform 0.3s ease;
 }
 
-.error-page {
-    color: rgb(208, 124, 27);
-    text-align: center;
-    font-size: 3.5rem;
-    margin-top: 5vh;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 4px 20px rgba(11, 103, 23, 0.3);
-    padding: 8rem;
-    border-radius: 12px;
-    background-color: rgba(208, 216, 159, 0.8);
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 .logo-nav {
-    width: 100px;
-    /* height: 100px; */
+    width: 120px;
+    /* Ajustá según tu diseño */
+    animation: breathing-logo 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px #6C7377) drop-shadow(0 0 10px rgba(26, 31, 34, 0.7)) drop-shadow(0 0 15px rgba(2, 27, 27, 0.5));
+}
+
+@keyframes breathing-logo {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 5px #A5B5BD) drop-shadow(0 0 10px rgba(74, 79, 82, 0.7)) drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px #FFFFFF) drop-shadow(0 0 16px rgba(127, 134, 138, 0.8)) drop-shadow(0 0 22px rgba(39, 43, 43, 0.6)) drop-shadow(0 0 30px rgba(3, 3, 3, 0.4));
+    }
 }
 
 .toggle-blanco {
@@ -140,11 +122,4 @@ div .detalles-boton {
 
 .toggle-blanco .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.campo-busqueda {
-    width: 200px;
-    font-size: 14px;
-    padding: 6px 10px;
-
 }

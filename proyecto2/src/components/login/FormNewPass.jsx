@@ -41,8 +41,8 @@ const FormNewPass = () => {
         icon: "question",
         title: "El usuario no existe..",
         text: "Queres registrarte?",
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",
@@ -59,8 +59,8 @@ const FormNewPass = () => {
       title: "El formulario ha sido enviado",
       showConfirmButton: false,
       timer: 1500,
-      iconColor: "#8FB7CD",
-      confirmButtonColor: "#8FB7CD",
+      iconColor: "#042550ff",
+      confirmButtonColor: "#042550ff",
       cancelButtonColor: "#d33",
       customClass: {
         popup: "small-alert",
