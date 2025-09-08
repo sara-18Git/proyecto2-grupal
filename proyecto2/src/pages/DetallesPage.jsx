@@ -436,9 +436,9 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
     },
     
   ];
-  const navegacion = useNavigate();
-  const handleComprar = () => {
-    navegacion("/comprar");
+  const navigate = useNavigate();
+   const handleIrA404 = () => {
+    navigate('/ruta-que-no-existe');
   };
   const producto = productos.find((item) => item.id === parseInt(id));
 
@@ -616,11 +616,11 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
               ;
               <button
                 className="btn btn-primary btn-lg flex-fill"
-                onClick={handleComprar}
+                onClick={handleIrA404}
               >
                 Comprar ahora
               </button>
-              <button className="botonDeseos btn text-light ">
+              <button className="botonDeseos btn text-light " onClick={handleIrA404}>
                 lista de deseos
               </button>
             </div>

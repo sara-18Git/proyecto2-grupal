@@ -33,9 +33,6 @@ const Destacado = () => {
           </p>
           <div className="banner-precio">$70.000 ARS</div>
           <div className="banner-acciones">
-            {/* <Link to="/producto/cyberpunk-2077" className="btn btn-primary">
-              Ver Detalles
-            </Link> */}
             <a
               href="https://youtu.be/ESADIKP28AE?si=AIR1nwJRUao29a5f  "
               target="blank"

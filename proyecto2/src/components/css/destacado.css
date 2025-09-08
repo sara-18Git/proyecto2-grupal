@@ -90,7 +90,6 @@ body {
   margin-bottom: 30px;
   box-shadow: 0 8px 25px rgba(42, 100, 121, 0.4);
   letter-spacing: 1.5px;
-  /* text-transform: uppercase; */
   color: #8fb7cd;
   border: 1px solid #355d76;
 }
@@ -190,7 +189,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .contenedorDelJuego {
     gap: 40px;

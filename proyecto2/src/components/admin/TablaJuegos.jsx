@@ -27,8 +27,8 @@ export default function TablaJuegos() {
   useEffect(() => {
     migrarJuegosCarruseles(itemsDestacados, itemsRecomendados); //
     cargar();
-    const enAlmacenamiento = (e) => {
-      if (e.key === "juegos") cargar();
+    const enAlmacenamiento = (evento) => {
+      if (evento.key === "juegos") cargar();
     };
     window.addEventListener("storage", enAlmacenamiento);
     return () => window.removeEventListener("storage", enAlmacenamiento);
