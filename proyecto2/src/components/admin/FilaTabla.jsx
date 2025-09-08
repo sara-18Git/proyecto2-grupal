@@ -15,7 +15,7 @@ const FilaTabla = ({
   const obtenerIconoRol = (rol) => {
     switch (rol) {
       case "destacados":
-        return <FaRegStar className="text-danger" title="Juego Destacado" />;
+        return <FaRegStar className="text-warning" title="Juego Destacado" />;
       case "recomendado":
         return (
           <LiaCertificateSolid
@@ -34,67 +34,79 @@ const FilaTabla = ({
   };
 
   return (
-    <tr key={juego.id}>
-      <td>
-        <div>
+    <tr key={juego.id} className="fila-tabla">
+      <td className="col-numero">
+        <div className="numero-fila">
           <strong>{idx + 1}</strong>
-          <div className="text-muted fs-6 small mt-3">
-            {juego.rol ? (
-              <span className="d-flex align-items-center gap-1">
-                {obtenerIconoRol(juego.rol)}
-                Rol: {juego.rol}
-              </span>
-            ) : (
-              <span className="d-flex align-items-center gap-1">
-                <FaQuestionCircle className="text-secondary" />
-                Sin rol asignado
-              </span>
-            )}
-          </div>
-        </div>                                                                            
-        
+        </div>
       </td>
-      <td>
-        <div className="d-flex align-items-center">
+      
+      <td className="col-rol">
+        <div className="contenedor-rol">
+          {juego.rol ? (
+            <span className="badge-rol d-flex align-items-center gap-1">
+              {obtenerIconoRol(juego.rol)}
+              <span className="texto-rol">{juego.rol}</span>
+            </span>
+          ) : (
+            <span className="badge-rol d-flex align-items-center gap-1">
+              <FaQuestionCircle className="text-secondary" />
+              <span className="texto-rol">Sin rol asignado</span>
+            </span>
+          )}
+        </div>
+      </td>
+      
+      <td className="col-titulo">
+        <div className="contenedor-titulo">
           {juego.imagen && (
             <img
               src={juego.imagen}
               alt={juego.title}
-              style={{
-                width: "50px",
-                height: "50px",
-                objectFit: "cover",
-                marginRight: "10px",
-                borderRadius: "4px",
-              }}
+              className="imagen-juego"
             />
           )}
-          <strong>{juego.title}</strong>
+          <strong className="titulo-juego">{juego.title}</strong>
         </div>
       </td>
 
-      <td>{juego.descripcion || "Sin descripción"}</td>
-      <td>{juego.precio || "N/A"}</td>
-      <td>{juego.genero || "N/A"}</td>
-      <td>{formatearFecha(juego.createdAt)}</td>
+      <td className="col-descripcion">
+        <div className="descripcion-juego">
+          {juego.descripcion || "Sin descripción"}
+        </div>
+      </td>
+      
+      <td className="col-precio">
+        <span className="precio-juego">{juego.precio || "N/A"}</span>
+      </td>
+      
+      <td className="col-genero">
+        <span className="genero-juego">{juego.genero || "N/A"}</span>
+      </td>
+      
+      <td className="col-fecha">
+        <span className="fecha-juego">{formatearFecha(juego.createdAt)}</span>
+      </td>
 
-      <td className="filas d-flex gap-3 ">
-        <Button
-          className="BotonesTabla mx-3 mt-5"
-          size="sm"
-          variant="secondary"
-          onClick={() => setEditando(juego)}
-        >
-          Editar
-        </Button>
-        <Button
-          className="BotonesTabla mx-3 mt-5"
-          size="sm"
-          variant="danger"
-          onClick={() => manejarEliminar(juego.id)}
-        >
-          Eliminar
-        </Button>
+      <td className="col-acciones">
+        <div className="contenedor-botones">
+          <Button
+            className="btn-tabla btn-editar"
+            size="sm"
+            variant="secondary"
+            onClick={() => setEditando(juego)}
+          >
+            Editar
+          </Button>
+          <Button
+            className="btn-tabla btn-eliminar"
+            size="sm"
+            variant="danger"
+            onClick={() => manejarEliminar(juego.id)}
+          >
+            Eliminar
+          </Button>
+        </div>
       </td>
     </tr>
   );

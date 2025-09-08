@@ -1,95 +1,303 @@
-.filas{height: 137px;
-
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  width: 100%;
 }
-.filas .BotonesTabla{
+
+.table {
+  margin-bottom: 0;
+  background: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  min-width: 800px;
+}
+
+.table th {
+  background: #2a6479;
+  color: white;
+  font-weight: 600;
+  padding: 12px 10px;
+  border: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px 10px;
+  vertical-align: middle;
+  border-color: #dee2e6;
+  font-size: 14px;
+}
+.col-numero {
+  width: 60px;
   text-align: center;
-    width: 100px;
-    height: 70px;
-    background-color: aqua;
 }
-@media (max-width: 820px) {
-  .filas {
-    min-height: 260px;
-  }
-  
-  .BotonesTabla {
-    width: 80px;
-    height: 50px;
-    margin-top: 3px;
-    margin-left: 8px;
-  }}
-@media (max-width: 768px) {
-  .filas {
-    min-height: 260px;
-  }
-  
-  .BotonesTabla {
-    width: 80px;
-    height: 50px;
-    margin-top: 3px;
-    margin-left: 8px;
-  }}
-  @media (max-width: 576px) {
-  .filas {
-    min-height: 280px;
-  }
-  
-  .BotonesTabla {
-    width: 170px;
-    height: 190px;
-    margin: 2px 0;
-    margin-left: auto;
-    margin-right: auto;
-  }}
-  @media (max-width: 1024px) {
-  .filas {
-    min-height: 255px;
-  }
-  
-  .BotonesTabla {
-    width: 80px;
-    height: 50px;
-    margin-top: 3px;
-    margin-left: 8px;
-  }}
-  @media (min-width: 1184px) {
-  .filas {
-    height: 550px;
-  }
-  
-  .BotonesTabla {
-    width: 110px;
-    height: 75px;
 
+.numero-fila {
+  font-size: 14px;
+  color: #495057;
+  font-weight: bold;
+}
+
+.col-rol {
+  width: 120px;
+}
+
+.badge-rol {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #e9ecef;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.texto-rol {
+  font-size: 12px;
+  color: #495057;
+  text-transform: capitalize;
+}
+
+.col-titulo {
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.contenedor-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagen-juego {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+  flex-shrink: 0;
+}
+
+.titulo-juego {
+  font-size: 14px;
+  color: #2a6479;
+  font-weight: 600;
+}
+
+.col-descripcion {
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.descripcion-juego {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
+.col-precio {
+  width: 100px;
+  text-align: center;
+}
+
+.precio-juego {
+  font-weight: 700;
+  color: #0d3042;
+  font-size: 14px;
+}
+
+.col-genero {
+  width: 120px;
+}
+
+.genero-juego {
+  font-size: 13px;
+  color: #6c757d;
+  text-transform: capitalize;
+}
+
+.col-fecha {
+  width: 150px;
+}
+
+.fecha-juego {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.col-acciones {
+  width: 180px;
+  min-width: 160px;
+}
+
+.contenedor-botones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.btn-tabla {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s;
+  border: 1px solid;
+  white-space: nowrap;
+  min-width: 70px;
+}
+
+@media (max-width: 1024px) {
+  .table {
+    min-width: 900px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .imagen-juego {
+    width: 45px;
+    height: 45px;
+  }
+
+  .btn-tabla {
+    padding: 5px 10px;
+    font-size: 12px;
+    min-width: 65px;
+  }
+
+  .col-descripcion {
+    max-width: 250px;
   }
 }
-  @media (min-width: 1187px){
-      .filas {
-    height: 190px;
+
+@media (max-width: 768px) {
+  .table {
+    min-width: 950px;
   }
-  
-  .BotonesTabla {
-    width: 110px;
-    height: 75px;
+
+  .table th,
+  .table td {
+    padding: 9px 7px;
+    font-size: 12px;
   }
+
+  .imagen-juego {
+    width: 40px;
+    height: 40px;
   }
-    @media (min-width: 1280px){
-      .filas {
-    height: 256px;
+
+  .titulo-juego {
+    font-size: 13px;
   }
-  
-  .BotonesTabla {
-    width: 110px;
-    height: 75px;
+
+  .btn-tabla {
+    padding: 5px 8px;
+    font-size: 11px;
+    min-width: 60px;
   }
+
+  .descripcion-juego {
+    font-size: 12px;
   }
-    @media (min-width: 1276px){
-      .filas {
-    height: 256px;
+
+  .col-descripcion {
+    max-width: 220px;
   }
-  
-  .BotonesTabla {
-    width: 110px;
-    height: 75px;
+}
+
+@media (max-width: 576px) {
+  .table {
+    min-width: 1000px;
   }
+
+  .table th,
+  .table td {
+    padding: 8px 6px;
+    font-size: 11px;
   }
+
+  .imagen-juego {
+    width: 35px;
+    height: 35px;
+  }
+
+  .titulo-juego {
+    font-size: 12px;
+  }
+
+  .btn-tabla {
+    padding: 4px 7px;
+    font-size: 10px;
+    min-width: 55px;
+  }
+
+  .descripcion-juego {
+    font-size: 11px;
+  }
+
+  .numero-fila {
+    font-size: 12px;
+  }
+
+  .texto-rol {
+    font-size: 11px;
+  }
+
+  .precio-juego {
+    font-size: 12px;
+  }
+
+  .genero-juego {
+    font-size: 11px;
+  }
+
+  .fecha-juego {
+    font-size: 10px;
+  }
+
+  .col-descripcion {
+    max-width: 200px;
+  }
+}
+
+.fila-tabla:hover {
+  background-color: #f8f9fa !important;
+}
+
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #a8a8a8;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #8a8a8a;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.table-responsive {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .table-responsive::after {
+    display: block;
+  }
+}

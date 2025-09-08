@@ -104,7 +104,7 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               rows={3}
               placeholder="Descripción del juego"
               value={camposAdicionales.descripcion}
-              onChange={(e) => handleCampoChange("descripcion", e.target.value)}
+              onChange={(evento) => handleCampoChange("descripcion", evento.target.value)}
             />
           </Form.Group>
 
@@ -114,7 +114,7 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               type="url"
               placeholder="https://ejemplo.com/imagen.jpg"
               value={camposAdicionales.imagen}
-              onChange={(e) => handleCampoChange("imagen", e.target.value)}
+              onChange={(evento) => handleCampoChange("imagen", evento.target.value)}
             />
             {camposAdicionales.imagen && (
               <div className="mt-2">
@@ -126,8 +126,8 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
                     maxHeight: "200px",
                     objectFit: "contain",
                   }}
-                  onError={(e) => {
-                    e.target.style.display = "none";
+                  onError={(evento) => {
+                    evento.target.style.display = "none";
                   }}
                 />
               </div>
@@ -140,7 +140,7 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               type="text"
               placeholder="Ej: Acción, Aventura, RPG"
               value={camposAdicionales.genero}
-              onChange={(e) => handleCampoChange("genero", e.target.value)}
+              onChange={(evento) => handleCampoChange("genero", evento.target.value)}
             />
           </Form.Group>
 
@@ -150,7 +150,7 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               type="text"
               placeholder="Ej: $1000ARS, GRATIS"
               value={camposAdicionales.precio}
-              onChange={(e) => handleCampoChange("precio", e.target.value)}
+              onChange={(evento) => handleCampoChange("precio", evento.target.value)}
             />
           </Form.Group>
         </Modal.Body>

@@ -1,9 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/destacado.css";
 import { FaPlayCircle } from "react-icons/fa";
 
 const Destacado = () => {
+    const navigate = useNavigate(); 
+    const handleComprarClick = (productoId) => {
+    navigate(`/producto/${productoId}`);
+    
+  };  
+    const handleIrA404 = () => {
+    navigate('/ruta-que-no-existe');
+  };
   return (
     <div className="contenedorDestacado">
       <div className="contenedorDelJuego">
@@ -24,9 +33,6 @@ const Destacado = () => {
           </p>
           <div className="banner-precio">$70.000 ARS</div>
           <div className="banner-acciones">
-            {/* <Link to="/producto/cyberpunk-2077" className="btn btn-primary">
-              Ver Detalles
-            </Link> */}
             <a
               href="https://youtu.be/ESADIKP28AE?si=AIR1nwJRUao29a5f  "
               target="blank"
@@ -35,11 +41,10 @@ const Destacado = () => {
             >
               <FaPlayCircle />
             </a>
-            <a href=" "className="btn-DestacadoBanner btn-secondaryo">
+            <a className="btn-DestacadoBanner btn-secondaryo"  onClick={handleIrA404}>
               Agregar a lista de deseos
             </a>
-            <a href=" "className="btn-DestacadoBanner btn-secondaryo">
-
+            <a className="btn-DestacadoBanner btn-secondaryo" onClick={() => handleComprarClick(7)} >
               Comprar
             </a>
           </div>
