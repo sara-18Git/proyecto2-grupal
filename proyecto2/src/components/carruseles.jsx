@@ -35,7 +35,7 @@ const Carruseles = () => {
     };
 
     sincronizarConAdmin();
-    const manejarCambioStorage = (event) => {
+    const manejarCambioStorage = (evento) => {
       if (evento.key === "juegos") {
         sincronizarConAdmin();
       }
