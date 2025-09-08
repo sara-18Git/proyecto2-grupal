@@ -48,8 +48,8 @@ const FormRegister = () => {
         icon: "question",
         title: "Olvidaste tu contraseña?..",
         text: "El usuario ya existe en la base de datos",
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",
@@ -66,8 +66,8 @@ const FormRegister = () => {
           icon: "error",
           title: "Las contraseñas deben ser iguales!",
           text: "Intenta nuevamente",
-          iconColor: "#8FB7CD",
-          confirmButtonColor: "#8FB7CD",
+          iconColor: "#042550ff",
+          confirmButtonColor: "#042550ff",
           cancelButtonColor: "#d33",
           customClass: {
             popup: "small-alert",
@@ -94,8 +94,8 @@ const FormRegister = () => {
         icon: "success",
         title: "El formulario ha sido enviado",
         showConfirmButton: false,
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",
@@ -108,8 +108,8 @@ const FormRegister = () => {
       Swal.fire({
         title: "Error al registrar usuario",
         icon: "error",
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",

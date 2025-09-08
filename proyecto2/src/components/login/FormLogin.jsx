@@ -29,11 +29,11 @@ const formLogin = () => {
   const handleNewPassword = () => {
     Swal.fire({
       icon: "success",
-      iconColor: "#2a6479",
+      iconColor: "#042550ff",
       title: "¡Listo!",
       text: "Tu contraseña está en proceso de ser recuperada",
-      confirmButtonColor: "#2a6479", // azul
-      cancelButtonColor: "#d33", // rojo
+      confirmButtonColor: "#042550ff",
+      cancelButtonColor: "#d33",
     });
     navegate("/");
     // navegate("/reset");
@@ -53,8 +53,8 @@ const formLogin = () => {
         icon: "error",
         title: "Resgistrate!",
         text: "El usuario no existe en la base de datos",
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",
@@ -68,8 +68,8 @@ const formLogin = () => {
         icon: "warning",
         title: "Contraseña incorrecta",
         text: "Despues de tres intento incorrectos se bloqueara el usuario",
-        iconColor: "#8FB7CD",
-        confirmButtonColor: "#8FB7CD",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
         customClass: {
           popup: "small-alert",
@@ -88,8 +88,8 @@ const formLogin = () => {
       title: "Usuario Logueado",
       icon: "success",
       draggable: true,
-      iconColor: "#8FB7CD",
-      confirmButtonColor: "#8FB7CD",
+      iconColor: "#042550ff",
+      confirmButtonColor: "#042550ff",
       cancelButtonColor: "#d33",
       customClass: {
         popup: "small-alert",
