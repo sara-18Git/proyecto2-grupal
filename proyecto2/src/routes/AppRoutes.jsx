@@ -8,11 +8,12 @@ import AdminRoutes from "./AdminRoutes";
 import DetallesPage from "../pages/DetallesPage";
 import RegisterPage from "../pages/RegisterPage";
 import TeamPage from "../pages/TeamPage";
-import ContactPage from "../pages/ContactPage";
+
 import LayoutConNav from "../layouts/LayoutConNav";
 import LayoutNavForms from "../layouts/LayoutNavForms";
 import NewPassPage from "../pages/NewPassPage";
 import { BsNewspaper } from "react-icons/bs";
+import ContactPage from "../pages/ContactPage";
 
 const AppRoutes = () => {
   return (
@@ -21,9 +22,9 @@ const AppRoutes = () => {
         <Route path="/" element={<HomePage></HomePage>}></Route>
 
         {/* Rutas protegidas */}
-        <Route element={<AdminRoutes></AdminRoutes>}> 
+        <Route element={<AdminRoutes></AdminRoutes>}>
           <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
-         </Route> 
+        </Route>
       </Route>
 
       <Route element={<LayoutNavForms></LayoutNavForms>}>
