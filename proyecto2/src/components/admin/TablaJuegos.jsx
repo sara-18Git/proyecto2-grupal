@@ -25,7 +25,7 @@ export default function TablaJuegos() {
 
   const cargar = () => setJuegos(obtenerJuegos());
   useEffect(() => {
-    migrarJuegosCarruseles(itemsDestacados, itemsRecomendados); //
+    migrarJuegosCarruseles(itemsDestacados, itemsRecomendados); 
     cargar();
     const enAlmacenamiento = (evento) => {
       if (evento.key === "juegos") cargar();
