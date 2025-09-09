@@ -5,7 +5,7 @@ import { FaSearch, FaSignInAlt, FaShoppingCart } from "react-icons/fa";
 import { IoIosContacts } from "react-icons/io";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import LogoNav from "../assets/logo.png";
-import "../components/header.css";
+import "../components/css/header.css";
 
 const Header = () => {
   const navigate = useNavigate();

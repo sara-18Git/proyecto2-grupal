@@ -4,7 +4,7 @@ import LogoNav from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { FaHome, FaGamepad } from "react-icons/fa";
-import "../components/header.css";
+import "../components/css/header.css";
 
 export default function Footer() {
   return (

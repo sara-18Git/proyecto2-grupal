@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Container } from "react-bootstrap";
-import FormRegister from "../components/login/FormRegister";
-import "../components/Header.css";
+import "../components/css/header.css";
 import FormNewPass from "../components/login/FormNewPass";
 
 const NewPassPage = () => {

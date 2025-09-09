@@ -2,7 +2,7 @@ import React from "react";
 //import FormRegister from "../components/login/FormRegister";
 import { Container } from "react-bootstrap";
 import FormRegister from "../components/login/FormRegister";
-import "../components/Header.css";
+import "../components/css/header.css";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
