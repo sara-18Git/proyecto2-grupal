@@ -80,7 +80,7 @@ export default function Footer() {
                   width="50"
                   height="50"
                   src="https://img.icons8.com/ios/50/twitterx--v2.png"
-                  class="social-icon"
+                  className="social-icon"
                   alt="twitterx--v2"
                 />
               </a>

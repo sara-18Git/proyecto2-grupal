@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../components/Header.css";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +24,8 @@ const ContactPage = () => {
     const newErrors = {};
     if (!formData.nombre.trim()) newErrors.nombre = "El nombre es obligatorio.";
     if (!formData.email.trim()) newErrors.email = "El email es obligatorio.";
-    if (!formData.mensaje.trim()) newErrors.mensaje = "El mensaje es obligatorio.";
+    if (!formData.mensaje.trim())
+      newErrors.mensaje = "El mensaje es obligatorio.";
     return newErrors;
   };
 
@@ -36,11 +39,39 @@ const ContactPage = () => {
 
     setLoading(true);
     setErrors({});
-    setTimeout(() => {
-      setLoading(false);
-      setExito("¡Mensaje enviado con éxito!");
-      setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
-    }, 1500);
+
+    emailjs
+      .send(
+        "service_fqfe8ai", //  SERVICE_ID
+        "template_p1g3913", //  TEMPLATE_ID
+        {
+          user_name: formData.nombre,
+          user_email: formData.email,
+          subject: formData.asunto,
+          message: formData.mensaje,
+          created_at: new Date().toLocaleString(),
+        },
+        "BxYPU4ObJfPOSjVCp" // PUBLIC_KEY
+      )
+      .then((response) => {
+        console.log("Correo enviado con éxito", response.status, response.text);
+
+        Swal.fire({
+          icon: "success",
+          title: "Mensaje enviado",
+          text: "Gracias por contactarnos. Te responderemos pronto.",
+          iconColor: "#042550ff",
+          confirmButtonColor: "#042550ff",
+        });
+
+        setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
+      })
+      .catch((err) => {
+        console.error("Error al enviar el correo", err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -48,9 +79,12 @@ const ContactPage = () => {
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
           <div className="formulario-gamer shadow p-4">
-            <h2 className="titulos-contactos text-center fw-bold">Contáctanos</h2>
+            <h2 className="titulos-contactos text-center fw-bold">
+              Contáctanos
+            </h2>
             <p className="text-form text-center">
-              ¿Tenés dudas, sugerencias o querés colaborar con <b>GameHub</b>?<br />
+              ¿Tenés dudas, sugerencias o querés colaborar con <b>GameHub</b>?
+              <br />
               Completá el formulario 👇
             </p>
 
@@ -63,10 +97,14 @@ const ContactPage = () => {
                   name="nombre"
                   value={formData.nombre}
                   onChange={handleChange}
-                  className={`form-control input-neon ${errors.nombre ? "is-invalid" : ""}`}
+                  className={`form-control input-neon ${
+                    errors.nombre ? "is-invalid" : ""
+                  }`}
                   placeholder="Tu nombre"
                 />
-                {errors.nombre && <div className="invalid-feedback">{errors.nombre}</div>}
+                {errors.nombre && (
+                  <div className="invalid-feedback">{errors.nombre}</div>
+                )}
               </div>
 
               {/* Email */}
@@ -77,10 +115,14 @@ const ContactPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`form-control input-neon ${errors.email ? "is-invalid" : ""}`}
+                  className={`form-control input-neon ${
+                    errors.email ? "is-invalid" : ""
+                  }`}
                   placeholder="tu@email.com"
                 />
-                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
+                {errors.email && (
+                  <div className="invalid-feedback">{errors.email}</div>
+                )}
               </div>
 
               {/* Asunto */}
@@ -103,18 +145,26 @@ const ContactPage = () => {
                   name="mensaje"
                   value={formData.mensaje}
                   onChange={handleChange}
-                  className={`form-control input-neon ${errors.mensaje ? "is-invalid" : ""}`}
+                  className={`form-control input-neon ${
+                    errors.mensaje ? "is-invalid" : ""
+                  }`}
                   rows="4"
                   placeholder="Escribí tu mensaje..."
                 />
-                {errors.mensaje && <div className="invalid-feedback">{errors.mensaje}</div>}
+                {errors.mensaje && (
+                  <div className="invalid-feedback">{errors.mensaje}</div>
+                )}
               </div>
 
               {/* Mensaje de éxito */}
               {exito && <div className="alert alert-success">{exito}</div>}
 
               {/* Botón */}
-              <button type="submit" className="btn btn-gamer w-100" disabled={loading}>
+              <button
+                type="submit"
+                className="btn btn-gamer w-100"
+                disabled={loading}
+              >
                 {loading ? "Enviando..." : "Enviar"}
               </button>
             </form>
@@ -123,7 +173,7 @@ const ContactPage = () => {
             <div className="text-center mt-4">
               <p className="text-form">También podés escribirnos a:</p>
               <p className="text-form email-neon">gamehub.contacto@gmail.com</p>
-              <p className="text-form" >o encontranos en Discord 🎮</p>
+              <p className="text-form">o encontranos en Discord 🎮</p>
             </div>
           </div>
         </div>
@@ -133,4 +183,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
