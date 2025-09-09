@@ -1,53 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+import "../components/Header.css";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    asunto: "",
+    mensaje: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [exito, setExito] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.nombre.trim()) newErrors.nombre = "El nombre es obligatorio.";
+    if (!formData.email.trim()) newErrors.email = "El email es obligatorio.";
+    if (!formData.mensaje.trim()) newErrors.mensaje = "El mensaje es obligatorio.";
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setLoading(true);
+    setErrors({});
+    setTimeout(() => {
+      setLoading(false);
+      setExito("¡Mensaje enviado con éxito!");
+      setFormData({ nombre: "", email: "", asunto: "", mensaje: "" });
+    }, 1500);
+  };
+
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container pt-5">
       <div className="row justify-content-center">
         <div className="col-md-8 col-lg-6">
           <div className="formulario-gamer shadow p-4">
-            <h2 className="text-center fw-bold mb-4">Contáctanos</h2>
-            <p className="text-center fw-bold">
-              ¿Tenés dudas, sugerencias o querés colaborar con <b>GameHub</b>?
-              Completa el formulario 👇
+            <h2 className="titulos-contactos text-center fw-bold">Contáctanos</h2>
+            <p className="text-form text-center">
+              ¿Tenés dudas, sugerencias o querés colaborar con <b>GameHub</b>?<br />
+              Completá el formulario 👇
             </p>
 
             <form onSubmit={handleSubmit}>
+              {/* Nombre */}
               <div className="mb-3">
-                <label className="form-label">Nombre *</label>
+                <label className="text-form form-label">Nombre *</label>
                 <input
                   type="text"
                   name="nombre"
                   value={formData.nombre}
                   onChange={handleChange}
-                  className={`form-control input-neon ${
-                    errors.nombre ? "is-invalid" : ""
-                  }`}
+                  className={`form-control input-neon ${errors.nombre ? "is-invalid" : ""}`}
                   placeholder="Tu nombre"
                 />
-                {errors.nombre && (
-                  <div className="invalid-feedback">{errors.nombre}</div>
-                )}
+                {errors.nombre && <div className="invalid-feedback">{errors.nombre}</div>}
               </div>
 
+              {/* Email */}
               <div className="mb-3">
-                <label className="form-label">Email *</label>
+                <label className="text-form form-label">Email *</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`form-control input-neon ${
-                    errors.email ? "is-invalid" : ""
-                  }`}
+                  className={`form-control input-neon ${errors.email ? "is-invalid" : ""}`}
                   placeholder="tu@email.com"
                 />
-                {errors.email && (
-                  <div className="invalid-feedback">{errors.email}</div>
-                )}
+                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
               </div>
 
-              <div className="mb-3">
+              {/* Asunto */}
+              <div className="text-form mb-3">
                 <label className="form-label">Asunto</label>
                 <input
                   type="text"
@@ -59,38 +96,34 @@ const ContactPage = () => {
                 />
               </div>
 
+              {/* Mensaje */}
               <div className="mb-3">
-                <label className="form-label">Mensaje *</label>
+                <label className="text-form form-label">Mensaje *</label>
                 <textarea
                   name="mensaje"
                   value={formData.mensaje}
                   onChange={handleChange}
-                  className={`form-control input-neon ${
-                    errors.mensaje ? "is-invalid" : ""
-                  }`}
+                  className={`form-control input-neon ${errors.mensaje ? "is-invalid" : ""}`}
                   rows="4"
-                  placeholder="Escribe tu mensaje..."
+                  placeholder="Escribí tu mensaje..."
                 />
-                {errors.mensaje && (
-                  <div className="invalid-feedback">{errors.mensaje}</div>
-                )}
+                {errors.mensaje && <div className="invalid-feedback">{errors.mensaje}</div>}
               </div>
 
+              {/* Mensaje de éxito */}
               {exito && <div className="alert alert-success">{exito}</div>}
 
-              <button
-                type="submit"
-                className="btn btn-gamer w-100"
-                disabled={loading}
-              >
+              {/* Botón */}
+              <button type="submit" className="btn btn-gamer w-100" disabled={loading}>
                 {loading ? "Enviando..." : "Enviar"}
               </button>
             </form>
 
+            {/* Información adicional */}
             <div className="text-center mt-4">
-              <p>También podés escribirnos a:</p>
-              <p className="email-neon">gamehub.contacto@gmail.com</p>
-              <p>o encontranos en Discord 🎮</p>
+              <p className="text-form">También podés escribirnos a:</p>
+              <p className="text-form email-neon">gamehub.contacto@gmail.com</p>
+              <p className="text-form" >o encontranos en Discord 🎮</p>
             </div>
           </div>
         </div>
@@ -100,3 +133,4 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
