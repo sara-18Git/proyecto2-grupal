@@ -11,7 +11,7 @@ const FormNewPass = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isValid },
+    formState: { errors },
   } = useForm({
     mode: "onChange",
     defaultValues: {
@@ -19,28 +19,22 @@ const FormNewPass = () => {
     },
   });
 
-  const navegate = useNavigate();
+  const navigate = useNavigate();
 
   const handleGoHome = () => {
-    navegate("/");
+    navigate("/");
   };
 
-  const navegacion = useNavigate();
-
   function onSubmit(data) {
-    console.log(data);
-
     const usuariosDeLaDb = obtenerUsuariosDeLocalStorage();
     const usuario = usuariosDeLaDb.find(
       (usuarioLS) => usuarioLS.email === data.email
     );
 
-    console.log(usuario);
     if (!usuario) {
       Swal.fire({
         icon: "question",
-        title: "El usuario no existe..",
-        text: "Queres registrarte?",
+        title: "El usuario no existe...",
         iconColor: "#042550ff",
         confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",
@@ -66,25 +60,26 @@ const FormNewPass = () => {
         popup: "small-alert",
       },
     });
+
     reset();
-    navegacion("/");
+    navigate("/");
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    
+    <Form onSubmit={handleSubmit(onSubmit)} >
       <Form.Group className="label mb-3" controlId="formBasicEmail">
-        <Form.Label>Correo electronico</Form.Label>
+        <Form.Label>Correo electrónico</Form.Label>
         <Form.Control
           type="email"
-          placeholder="Ingrese su correo electronico"
+          placeholder="Ingrese su correo electrónico"
           isInvalid={errors.email}
-          isValid={!errors.email}
           {...register("email", {
-            required: "El correo electronico es requerido",
+            required: "El correo electrónico es requerido",
             pattern: {
               value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
               message:
-                "El correo electronico debe tener texto antes de la @ y, despues de  @,  debe tener texto y . seguido de texto",
+                "El correo electrónico debe tener texto antes de la @ y, después de @, debe tener texto y . seguido de texto",
             },
           })}
         />
@@ -99,7 +94,7 @@ const FormNewPass = () => {
         </Button>
 
         <Button className="forms-boton ms-4" onClick={handleGoHome}>
-          <>Cancelar</>
+          Cancelar
         </Button>
       </div>
     </Form>

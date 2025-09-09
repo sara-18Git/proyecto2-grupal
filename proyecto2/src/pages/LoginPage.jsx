@@ -8,7 +8,7 @@ const LoginPage = () => {
   return (
     <>
       <h1 className="titulos-form">Iniciar Sesion</h1>
-      <Container className="custom-form border rounded p-4 w-50">
+      <Container className="custom-form border rounded p-4 w-50 mb-5">
         <FormLogin></FormLogin>
         <div className="mt-4 text-center">
           <Link

@@ -9,7 +9,7 @@ const NewPassPage = () => {
   return (
     <>
       <h1 className="titulos-form">Recuperar contraseña </h1>
-      <Container className="custom-form border rounded p-4 w-50">
+      <Container className="custom-form border rounded p-4 w-50 mb-5">
         <FormNewPass></FormNewPass>
       </Container>
     </>

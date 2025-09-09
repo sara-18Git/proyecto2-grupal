@@ -80,7 +80,7 @@ const ContactPage = () => {
         <div className="col-md-8 col-lg-6">
           <div className="formulario-gamer shadow p-4">
             <h2 className="titulos-contactos text-center fw-bold">
-              Contáctanos
+              Contactanos
             </h2>
             <p className="text-form text-center">
               ¿Tenés dudas, sugerencias o querés colaborar con <b>GameHub</b>?

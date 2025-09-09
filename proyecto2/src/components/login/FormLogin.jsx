@@ -67,7 +67,7 @@ const formLogin = () => {
       Swal.fire({
         icon: "warning",
         title: "Contraseña incorrecta",
-        text: "Despues de tres intento incorrectos se bloqueara el usuario",
+        text: "Después de tres intentos incorrectos se bloqueará el usuario",
         iconColor: "#042550ff",
         confirmButtonColor: "#042550ff",
         cancelButtonColor: "#d33",

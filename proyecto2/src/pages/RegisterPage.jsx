@@ -9,7 +9,7 @@ const RegisterPage = () => {
   return (
     <>
       <h1 className="titulos-form">Registrarse </h1>
-      <Container className="custom-form border rounded p-4 w-50">
+      <Container className="custom-form border rounded p-4 w-50 mb-5">
         <FormRegister></FormRegister>
         <div className="mt-4 text-center">
           <div className="mt-2">
