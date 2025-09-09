@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 import {
   obtenerUsuariosDeLocalStorage,
@@ -45,8 +46,8 @@ const FormRegister = () => {
     console.log(usuario);
     if (usuario) {
       Swal.fire({
-        icon: "question",
-        title: "Olvidaste tu contraseña?..",
+        icon: "error",
+        title: "Ingresá otro correo electronico ...",
         text: "El usuario ya existe en la base de datos",
         iconColor: "#042550ff",
         confirmButtonColor: "#042550ff",
@@ -117,6 +118,24 @@ const FormRegister = () => {
       });
       console.error(error);
     }
+
+    emailjs
+      .send(
+        "service_fqfe8ai", // SERVICE_ID
+        "template_5wmaenh", // TEMPLATE_ID
+        {
+          user_name: data.userName,
+          user_email: data.email,
+          created_at: new Date().toLocaleString(),
+        },
+        "BxYPU4ObJfPOSjVCp" //  PUBLIC_KEY
+      )
+      .then((response) => {
+        console.log("Correo enviado con éxito", response.status, response.text);
+      })
+      .catch((err) => {
+        console.error("Error al enviar el correo", err);
+      });
   }
 
   return (
