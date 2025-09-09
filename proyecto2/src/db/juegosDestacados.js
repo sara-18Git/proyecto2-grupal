@@ -19,7 +19,7 @@ export const itemsDestacados = [
     description:
       "Explora, lucha y sobrevive mientras asciendes a la cima de un vasto reino gobernado por la seda y el canto.",
     price: "$20.000ARS",
-    category: "Metroidvania/Pelea/Indie",
+    category: "Pelea",
     rol: "destacados",
   },
   {

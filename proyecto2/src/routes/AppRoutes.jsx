@@ -40,7 +40,7 @@ const AppRoutes = () => {
         <Route path="/team" element={<TeamPage></TeamPage>}></Route>
 
         <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
-
+        <Route path="/404" element={<Error404Page />} />
         <Route path="*" element={<Error404Page></Error404Page>}></Route>
       </Route>
     </Routes>

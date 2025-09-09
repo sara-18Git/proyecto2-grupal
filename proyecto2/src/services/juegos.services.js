@@ -59,19 +59,15 @@ export function actualizarJuego(id, cambios) {
   return true;
 }
 
-// FUNCIÓN ÚNICA - Elimina las duplicadas y deja solo esta
 export function migrarJuegosCarruseles(juegosDestacados, juegosRecomendados = []) {
   const juegosExistentes = obtenerJuegos();
-  
-  // Si ya hay juegos, no migrar para no duplicar
+
   if (juegosExistentes.length > 0) {
     console.log("Ya existen juegos en el sistema, no se migran");
     return;
   }
 
-  // Combinar juegos destacados y recomendados
   const todosLosJuegos = [
-    // Juegos destacados (rol: "destacados")
     ...juegosDestacados.map((juego) => ({
       id: juego.id,
       title: juego.title,
@@ -83,9 +79,8 @@ export function migrarJuegosCarruseles(juegosDestacados, juegosRecomendados = []
       createdAt: new Date().toISOString(),
     })),
     
-    // Juegos recomendados (rol: "recomendado") - con IDs diferentes
     ...juegosRecomendados.map((juego) => ({
-      id: juego.id + 100, // Sumamos 100 para IDs únicos
+      id: juego.id + 100,
       title: juego.title,
       descripcion: juego.description,
       genero: juego.category,
@@ -100,10 +95,8 @@ export function migrarJuegosCarruseles(juegosDestacados, juegosRecomendados = []
   console.log(`${todosLosJuegos.length} juegos migrados al sistema`);
 }
 
-// Función para forzar migración (sobrescribe todo)
 export function forzarMigracionJuegos(juegosDestacados, juegosRecomendados = []) {
   const todosLosJuegos = [
-    // Juegos destacados
     ...juegosDestacados.map((juego) => ({
       id: juego.id,
       title: juego.title,
@@ -115,7 +108,6 @@ export function forzarMigracionJuegos(juegosDestacados, juegosRecomendados = [])
       createdAt: new Date().toISOString(),
     })),
     
-    // Juegos recomendados
     ...juegosRecomendados.map((juego) => ({
       id: juego.id + 100,
       title: juego.title,

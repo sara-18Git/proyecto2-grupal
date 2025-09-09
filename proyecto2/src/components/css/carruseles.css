@@ -343,6 +343,7 @@
 
   .carruseles-content {
     padding: 12px;
+    height: 250px;
   }
 
   .carruseles-button {
@@ -389,7 +390,7 @@
     padding: 15px 30px;
   }
 .carruseles-content {
-  height: 200px;
+  height: 210px;
 }
   .carruseles-heading {
     font-size: 20px;
@@ -422,7 +423,7 @@
     font-size: 16px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 412px) {
   .carruseles-container {
     padding: 10px 20px;
   }

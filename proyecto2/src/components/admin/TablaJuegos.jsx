@@ -19,6 +19,7 @@ function formatearFecha(iso) {
   }
 }
 export default function TablaJuegos() {
+  
   const [juegos, setJuegos] = useState([]);
   const [editando, setEditando] = useState(null);
   const [creando, setCreando] = useState(false);

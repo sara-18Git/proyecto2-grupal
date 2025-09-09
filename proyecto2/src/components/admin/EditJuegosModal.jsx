@@ -4,15 +4,14 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { actualizarJuego } from "../../services/juegos.services";
 
-
 export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
   const [camposAdicionales, setCamposAdicionales] = useState({
     descripcion: juego?.descripcion || "",
     imagen: juego?.imagen || "",
     genero: juego?.genero || "",
-    precio: juego?.precio || ""
+    precio: juego?.precio || "",
   });
-
+  const generos = ["Acción", "Aventura", "Pelea", "Multijugador", "Simulador"];
   const {
     register,
     handleSubmit,
@@ -33,7 +32,7 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
       descripcion: juego?.descripcion || "",
       imagen: juego?.imagen || "",
       genero: juego?.genero || "",
-      precio: juego?.precio || ""
+      precio: juego?.precio || "",
     });
   }, [juego, reset]);
 
@@ -44,7 +43,7 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
         descripcion: camposAdicionales.descripcion.trim(),
         imagen: camposAdicionales.imagen.trim(),
         genero: camposAdicionales.genero.trim(),
-        precio: camposAdicionales.precio.trim()
+        precio: camposAdicionales.precio.trim(),
       });
       Swal.fire({
         title: "Juego actualizado",
@@ -68,14 +67,21 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
   };
 
   const handleCampoChange = (campo, valor) => {
-    setCamposAdicionales(prev => ({
+    setCamposAdicionales((prev) => ({
       ...prev,
-      [campo]: valor
+      [campo]: valor,
     }));
   };
 
   return (
-    <Modal show onHide={alCerrar} backdrop="static" centered size="lg"  dialogClassName="modal-dark">
+    <Modal
+      show
+      onHide={alCerrar}
+      backdrop="static"
+      centered
+      size="lg"
+      dialogClassName="modal-dark"
+    >
       <Form onSubmit={handleSubmit(alEnviar)}>
         <Modal.Header closeButton>
           <Modal.Title>Editar juego</Modal.Title>
@@ -102,9 +108,12 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
             <Form.Control
               as="textarea"
               rows={3}
+              maxLength={114}
               placeholder="Descripción del juego"
               value={camposAdicionales.descripcion}
-              onChange={(even) => handleCampoChange("descripcion", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("descripcion", evento.target.value)
+              }
             />
           </Form.Group>
 
@@ -114,16 +123,22 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
               type="url"
               placeholder="https://ejemplo.com/imagen.jpg"
               value={camposAdicionales.imagen}
-              onChange={(evento) => handleCampoChange("imagen", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("imagen", evento.target.value)
+              }
             />
             {camposAdicionales.imagen && (
               <div className="mt-2">
-                <img 
-                  src={camposAdicionales.imagen} 
-                  alt="Vista previa" 
-                  style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'contain' }}
+                <img
+                  src={camposAdicionales.imagen}
+                  alt="Vista previa"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "200px",
+                    objectFit: "contain",
+                  }}
                   onError={(evento) => {
-                    evento.target.style.display = 'none';
+                    evento.target.style.display = "none";
                   }}
                 />
               </div>
@@ -131,28 +146,37 @@ export default function EditJuegosModal({ juego, alCerrar, alGuardar }) {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Género</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ej: Acción, Aventura, RPG"
+            <Form.Label>Categoria</Form.Label>
+            <Form.Select
               value={camposAdicionales.genero}
-              onChange={(evento) => handleCampoChange("genero", evento.target.value)}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
+              onChange={(evento) =>
+                handleCampoChange("genero", evento.target.value)
+              }
+            >
+              <option value="">Selecciona una Categoria</option>
+              {generos.map((genero, index) => (
+                <option key={index} value={genero}>
+                  {genero}
+                </option>
+              ))}
+            </Form.Select>
+               <Form.Group className="mb-3">
             <Form.Label>Precio</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: $1000ARS, GRATIS"
               value={camposAdicionales.precio}
-              onChange={(evento) => handleCampoChange("precio", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("precio", evento.target.value)
+              }
             />
           </Form.Group>
-
+          </Form.Group>
           <div className="text-muted small mt-2">
             Creado:{" "}
-            {juego?.createdAt ? new Date(juego.createdAt).toLocaleString() : "-"}
+            {juego?.createdAt
+              ? new Date(juego.createdAt).toLocaleString()
+              : "-"}
             {juego?.updatedAt &&
               ` • Actualizado: ${new Date(juego.updatedAt).toLocaleString()}`}
           </div>

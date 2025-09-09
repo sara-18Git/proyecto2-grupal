@@ -7,7 +7,7 @@ export const itemsRecomendados = [
     description:
       "La épica aventura de Cloud llega a PC. Explora un mundo vasto y redefine destinos en esta secuela.",
     price: "$70.000ARS",
-    category: "Pelea/Aventura",
+    category: "Aventura",
     rol: "Recomendado",
     
   },
@@ -19,8 +19,9 @@ export const itemsRecomendados = [
     description:
       "La expansión de Elden Ring. Explora las sombrías Tierras Intermedias de la Emperatriz Messmer.",
     price: "$35.000ARS",
-    category: "DLC",
+    category: "Pelea",
     rol: "Recomendado",
+    
   },
   {
     id: 9,
@@ -30,7 +31,7 @@ export const itemsRecomendados = [
     description:
       "Guerra intergaláctica cooperativa. Difunde la democracia gestionista con fuego amigo y estratagemas caóticas.",
     price: "$40.000ARS",
-    category: "Shooter Cooperativo",
+    category: "Multijugador",
     rol: "Recomendado",
   },
   {
@@ -41,7 +42,7 @@ export const itemsRecomendados = [
     description:
       "Acción espectacular con el Rey Mono. Viaje épico basado en el clásico chino 'Viaje al Oeste'.",
     price: "$60.000ARS",
-    category: "Accion/Aventura/Pelea",
+    category: "Aventura",
     rol: "Recomendado",
   },
   {
@@ -52,7 +53,7 @@ export const itemsRecomendados = [
     description:
       "Vive el giro de Yakuza al JRPG. Sigue la legendaria historia de redención de Ichiban Kasuga.",
     price: "$11.000ARS",
-    category: "Accion/Aventura",
+    category: "Accion",
     rol: "Recomendado",
   },
   {
@@ -63,7 +64,7 @@ export const itemsRecomendados = [
     description:
       "juego de aventura y acción 2D estilo Metroidvania donde un caballero insectoide explora el vasto y caído reino de Hallownest,.",
     price: "$4.000ARS",
-    category: "Metroidvania/Pelea/Indie",
+    category: "Pelea",
     rol: "Recomendado",
   },
 ];
