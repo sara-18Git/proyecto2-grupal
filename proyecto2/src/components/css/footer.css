@@ -9,9 +9,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 
 .box {
@@ -35,7 +35,7 @@
 }
 
 .box h2 {
-  color: #4ecdc4;
+  color: #518dad;
   margin-bottom: 20px;
   font-size: 1.4rem;
   position: relative;
@@ -103,7 +103,7 @@
   text-align: center;
   padding: 20px;
   margin-top: 30px;
-  border-top: 1px solid rgba(143, 183, 205, 0.3);
+  border-top: 1px solid rgba(65, 116, 143, 0.3);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -114,9 +114,12 @@
 }
 
 .grupo-2 b {
-  color: #4ecdc4;
+  color: #8FB7CD;
 }
 
+.grupo-2 {
+  color: #8FB7CD;
+}
 /* Responsive */
 @media screen and (max-width: 768px) {
   .grupo-1 {
@@ -154,4 +157,16 @@
     width: 40px;
     height: 40px;
   }
+}
+
+.social-icon {
+  background-color: #68b4de;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.custom-footer {
+    max-width: 100%;
+    background-color: #07255e !important;
+   
 }
