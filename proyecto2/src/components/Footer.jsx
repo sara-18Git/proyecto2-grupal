@@ -1,46 +1,60 @@
 import React from "react";
 import "./css/footer.css";
 import LogoNav from "../assets/logo.png";
+import { NavLink } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import { FaHome, FaGamepad } from "react-icons/fa";
+import "../components/header.css";
+
 export default function Footer() {
   return (
     <div>
-      <footer className="footer-container">
+      <footer className="custom-footer">
         <div className="grupo-1">
           <div className="box">
-            <figure>
-              <a href="#">
-                <img
-                  width="180"
-                  src={LogoNav}
-                  alt="logo de GameHub"
-                  className="footer-logo"
-                />
-              </a>
-            </figure>
+                <Nav.Link as={NavLink} to="/">
+                  <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
+                </Nav.Link>
+      
           </div>
 
           <div className="box">
-            <h2>INFORMACIÓN</h2>
-            <nav>
-              <ul>
-                <li>
-                  <a href="#">Inicio</a>
-                </li>
-                <li>
-                  <a href="#">Juegos</a>
-                </li>
-                <li>
-                  <a href="#">Sobre Nosotros</a>
-                </li>
-                <li>
-                  <a href="#">Contacto</a>
-                </li>
-              </ul>
-            </nav>
+            <h2>Información</h2>
+            <ul className="footer-nav-list">
+              <li>
+                <Nav.Link as={NavLink} to="/">
+                  <div className="my-icon">
+                    <FaHome color="#8FB7CD" />
+                    Inicio
+                  </div>
+                </Nav.Link>
+              </li>
+
+              <li>
+                <Nav.Link as={NavLink} to="/">
+                  <div className="my-icon">
+                    <FaGamepad color="#8FB7CD" />
+                    Juegos
+                  </div>
+                </Nav.Link>
+              </li>
+
+              <li>
+                <Nav.Link as={NavLink} to="/team">
+                  <p className="my-icon mb-0">Sobre Nosotros</p>
+                </Nav.Link>
+              </li>
+
+              <li>
+                <Nav.Link as={NavLink} to="/contact">
+                  <p className="my-icon mb-0">Contactos</p>
+                </Nav.Link>
+              </li>
+            </ul>
           </div>
 
           <div className="box">
-            <h2>SÍGUENOS</h2>
+            <h2>Seguinos</h2>
             <div className="red-social">
               <a
                 href="https://www.facebook.com/index.php/?lang=es"
@@ -66,6 +80,7 @@ export default function Footer() {
                   width="50"
                   height="50"
                   src="https://img.icons8.com/ios/50/twitterx--v2.png"
+                  class="social-icon"
                   alt="twitterx--v2"
                 />
               </a>
@@ -75,7 +90,7 @@ export default function Footer() {
 
         <div className="grupo-2">
           <small>
-            &copy;2025 <b>GameHub</b> - Todos los Derechos Reservados.
+            &copy;2025 - <b>GameHub</b> - Todos los Derechos Reservados.
           </small>
         </div>
       </footer>

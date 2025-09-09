@@ -14,9 +14,12 @@ import LayoutNavForms from "../layouts/LayoutNavForms";
 import NewPassPage from "../pages/NewPassPage";
 import { BsNewspaper } from "react-icons/bs";
 import ContactPage from "../pages/ContactPage";
+import ScrollToTop from "../components/ScrollToTop";
 
 const AppRoutes = () => {
   return (
+    <>
+    <ScrollToTop></ScrollToTop>
     <Routes>
       <Route element={<LayoutConNav></LayoutConNav>}>
         <Route path="/" element={<HomePage></HomePage>}></Route>
@@ -44,6 +47,8 @@ const AppRoutes = () => {
         <Route path="*" element={<Error404Page></Error404Page>}></Route>
       </Route>
     </Routes>
+    </>
+    
   );
 };
 

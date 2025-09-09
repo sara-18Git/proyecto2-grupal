@@ -70,26 +70,6 @@ const Header = () => {
           <Nav.Link as={NavLink} to="/">
             <img src={LogoNav} alt="Logo de GameHub" className="logo-nav" />
           </Nav.Link>
-
-          <Nav.Link as={NavLink} to="/buscar" className="ms-3">
-            <div className="my-icon">
-              {" "}
-              <FaSearch className="icono-detaills" />
-            </div>
-          </Nav.Link>
-
-          <Nav.Link onClick={handleCartClick}>
-            <div className="my-icon">
-              <FaShoppingCart className="icono-detaills" />
-            </div>
-          </Nav.Link>
-
-          {/* <Nav.Link as={NavLink} to="/login">
-            <div className="my-icon">
-              {" "}
-              <FaShoppingCart className="icono-detaills" />
-            </div>
-          </Nav.Link> */}
         </div>
 
         <div className="ms-auto">
