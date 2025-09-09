@@ -50,6 +50,17 @@ div .detalles-boton {
     box-shadow: 0 0 25px rgba(42, 100, 121, 0.4);
 }
 
+.text-form { 
+    color: #8FB7CD !important;
+   }
+
+.titulos-contactos {
+    text-align: center;
+    color: #8FB7CD !important;
+    font-size: 25px;
+}
+
+
 .titulos-form {
     text-align: center;
     color: #8FB7CD !important;
