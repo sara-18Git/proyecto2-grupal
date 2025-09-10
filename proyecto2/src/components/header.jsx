@@ -9,34 +9,12 @@ import "../components/css/header.css";
 const Header = () => {
   const navigate = useNavigate();
 
-  const handleCartClick = () => {
-    Swal.fire({
-      title: "Para cargar el carrito primero debes iniciar sesión",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Iniciar Sesión",
-      cancelButtonText: "Cancelar",
-      iconColor: "#042550ff",
-      confirmButtonColor: "#042550ff",
-      cancelButtonColor: "#d33",
-      customClass: {
-        popup: "small-alert",
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        navigate("/login");
-      }
-    });
-  };
-
   const user = JSON.parse(sessionStorage.getItem("usuario")) || null;
   function logout() {
     Swal.fire({
       title: "Estas seguro de cerrar sesión?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
       confirmButtonText: "Salir",
       iconColor: "#042550ff",
       confirmButtonColor: "#042550ff",
