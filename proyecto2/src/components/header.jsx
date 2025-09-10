@@ -5,7 +5,7 @@ import { FaSearch, FaSignInAlt, FaShoppingCart } from "react-icons/fa";
 import { IoIosContacts } from "react-icons/io";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import LogoNav from "../assets/logo.png";
-import "../components/header.css";
+import "../components/css/header.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -33,12 +33,12 @@ const Header = () => {
   const user = JSON.parse(sessionStorage.getItem("usuario")) || null;
   function logout() {
     Swal.fire({
-      title: "Estas seguro de cerrar sesion?",
+      title: "Estas seguro de cerrar sesión?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Si",
+      confirmButtonText: "Salir",
       iconColor: "#042550ff",
       confirmButtonColor: "#042550ff",
       cancelButtonColor: "#d33",
@@ -48,7 +48,7 @@ const Header = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "Sesion cerrada!",
+          title: "Sesión cerrada!",
           icon: "success",
           iconColor: "#042550ff",
           confirmButtonColor: "#042550ff",
@@ -89,22 +89,21 @@ const Header = () => {
               <p className="my-icon mb-0">Contactos</p>
             </Nav.Link>
 
-            {user?.email === "saraabigailrobles9@gmail.com" ? (
+            {user ? (
               <>
-                <Nav.Link as={NavLink} to="/admin">
-                  <div className="my-icon mb-0">
-                    {" "}
-                    <IoIosContacts className="icono-detaills" /> Admin
-                  </div>
-                </Nav.Link>
-
+                {user.email === "saraabigailrobles9@gmail.com" && (
+                  <Nav.Link as={NavLink} to="/admin">
+                    <div className="my-icon mb-0">
+                      <IoIosContacts className="icono-detaills" /> Admin
+                    </div>
+                  </Nav.Link>
+                )}
                 <Button variant="danger" onClick={logout}>
-                  Cerrar sesion
+                  Cerrar sesión
                 </Button>
               </>
             ) : (
               <>
-                {" "}
                 <Nav.Link as={NavLink} to="/login">
                   <div className="my-icon">
                     <FaSignInAlt className="icono-detaills" />

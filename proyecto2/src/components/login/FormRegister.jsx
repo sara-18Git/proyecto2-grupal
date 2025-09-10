@@ -66,7 +66,7 @@ const FormRegister = () => {
         Swal.fire({
           icon: "error",
           title: "Las contraseñas deben ser iguales!",
-          text: "Intenta nuevamente",
+          text: "Intentá nuevamente",
           iconColor: "#042550ff",
           confirmButtonColor: "#042550ff",
           cancelButtonColor: "#d33",
@@ -146,7 +146,6 @@ const FormRegister = () => {
           type="text"
           placeholder="Ingrese su nombre de usuario"
           isInvalid={errors.userName}
-          isValid={!errors.userName}
           {...register("userName", {
             required: "El nombre de usuario es requerido",
 
@@ -176,7 +175,6 @@ const FormRegister = () => {
           type="email"
           placeholder="Ingrese su correo electronico"
           isInvalid={errors.email}
-          isValid={!errors.email}
           {...register("email", {
             required: "El correo electronico es requerido",
             pattern: {
@@ -197,7 +195,6 @@ const FormRegister = () => {
           type="password"
           placeholder="Ingrese su contraseña"
           isInvalid={errors.password}
-          isValid={!errors.password}
           {...register("password", {
             required: "La contraseñia es un campo requerido",
             pattern: {
@@ -219,7 +216,6 @@ const FormRegister = () => {
           type="password"
           placeholder="Confirme su contraseña"
           isInvalid={errors.confirmPassword}
-          isValid={!errors.confirmPassword}
           {...register("confirmPassword", {
             required: "Confirmar la contraseña es requerido",
             pattern: {

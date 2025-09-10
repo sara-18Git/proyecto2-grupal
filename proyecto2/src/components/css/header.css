@@ -50,9 +50,9 @@ div .detalles-boton {
     box-shadow: 0 0 25px rgba(42, 100, 121, 0.4);
 }
 
-.text-form { 
+.text-form {
     color: #8FB7CD !important;
-   }
+}
 
 .titulos-contactos {
     text-align: center;
@@ -136,25 +136,24 @@ div .detalles-boton {
 }
 
 .box {
-  text-align: center;
+    text-align: center;
 }
 
 .footer-nav-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
 .footer-nav-list li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .footer-nav-list .my-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: #ffffff;
-  text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
 }
-
