@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { FaHome } from "react-icons/fa";
-import LogoNav from "../assets/logo.png";
+import LogoNav from "/logo.png";
 import "../components/css/header.css";
 
 const HeaderForms = () => {

@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, Button, Form } from "react-bootstrap";
 import { FaSignInAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2/dist/sweetalert2.js";
-import LogoNav from "../assets/logo.png";
+import LogoNav from "/logo.png";
 import "../components/css/header.css";
 
 const Header = () => {
