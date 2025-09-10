@@ -21,7 +21,6 @@ export const itemsRecomendados = [
     price: "$35.000ARS",
     category: "Pelea",
     rol: "Recomendado",
-    
   },
   {
     id: 9,

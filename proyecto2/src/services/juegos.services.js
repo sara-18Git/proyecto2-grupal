@@ -80,7 +80,7 @@ export function migrarJuegosCarruseles(juegosDestacados, juegosRecomendados = []
     })),
     
     ...juegosRecomendados.map((juego) => ({
-      id: juego.id + 100,
+      id: juego.id ,
       title: juego.title,
       descripcion: juego.description,
       genero: juego.category,
