@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/footer.css";
-import LogoNav from "../assets/logo.png";
+import LogoNav from "/logo.png";
 import { NavLink } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { FaHome, FaGamepad } from "react-icons/fa";
