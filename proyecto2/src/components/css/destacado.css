@@ -1,0 +1,290 @@
+body {
+  background: linear-gradient(135deg, #051b44 0%, #000310 100%);
+  margin: 0;
+
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.contenedorDestacado {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #010f29 0%, #102239 100%);
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #2a6479;
+}
+
+.contenedorDestacado::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(143, 183, 205, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contenedorDelJuego {
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+  z-index: 2;
+  gap: 60px;
+}
+
+.contendorImagen {
+  flex: 0 0 50%;
+  position: relative;
+}
+
+.contendorImagen::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(45deg, #2a6479, #355d76);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(15px);
+}
+
+.contendorImagen img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  border: 3px solid #355d76;
+}
+
+.contendorImagen img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+.contenedorTexto {
+  flex: 0 0 45%;
+  color: #8fb7cd;
+  padding: 30px 0;
+}
+
+.contenedorTexto span {
+  display: inline-block;
+  background: linear-gradient(45deg, #2a6479, #355d76);
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(42, 100, 121, 0.4);
+  letter-spacing: 1.5px;
+  color: #8fb7cd;
+  border: 1px solid #355d76;
+}
+
+.contenedorTexto h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #8fb7cd;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.contenedorTexto p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #8fb7cd;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding-right: 20px;
+}
+
+.banner-precio {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2a6479;
+  margin-bottom: 35px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  position: relative;
+  padding: 8px 0;
+}
+
+.banner-precio::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #2a6479, transparent);
+}
+
+.banner-acciones {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.btn-DestacadoBanner {
+  padding: 15px 30px;
+  border-radius: 35px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+.btn-DestacadoBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+.btn-secondaryo {
+  background: linear-gradient(45deg, #2a6479, #355d76);
+  color: #8fb7cd;
+  box-shadow: 0 12px 30px rgba(42, 100, 121, 0.4);
+  border: 2px solid #355d76;
+  text-decoration: none;
+}
+
+.btn-secondaryo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(42, 100, 121, 0.5);
+  background: linear-gradient(45deg, #355d76, #2a6479);
+}
+
+
+.contenedorDestacado {
+  border: 2px solid #2a6479;
+  box-shadow: 0 0 25px rgba(42, 100, 121, 0.4);
+}
+.contenedorTexto > * {
+  margin-bottom: 25px;
+}
+
+.contenedorTexto > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  .contenedorDelJuego {
+    gap: 40px;
+    padding: 0 30px;
+  }
+  
+  .contendorImagen img {
+    height: 400px;
+  }
+  
+  .contenedorTexto h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contenedorDelJuego {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .contendorImagen {
+    order: 2;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  
+
+  .contenedorTexto {
+    order: 1;
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 20px 0;
+  }
+  
+  .contenedorTexto h2 {
+    font-size: 32px;
+  }
+  
+  .banner-acciones {
+    justify-content: center;
+  }
+  
+  .contendorImagen img {
+    height: 350px;
+  }
+  
+  .contenedorTexto p {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+
+  
+  .contenedorDestacado {
+    padding: 30px 0;
+    margin: 20px auto;
+    border-radius: 15px;
+  }
+  
+  .contenedorDelJuego {
+    padding: 0 20px;
+    gap: 30px;
+  }
+  
+  .contenedorTexto h2 {
+    font-size: 28px;
+  }
+  
+  .btn-DestacadoBanner {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+  
+  .banner-precio {
+    font-size: 28px;
+  }
+  
+  .contendorImagen img {
+    height: 280px;
+  }
+  
+  .banner-acciones {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .contenedorTexto span {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  
+  .contenedorTexto p {
+    font-size: 16px;
+  }
+}
