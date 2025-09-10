@@ -85,6 +85,7 @@ const FormRegister = () => {
         createdAt: new Date().toISOString(),
         estado: "pendiente", 
         rol: "usuario", 
+
       };
 
       console.log(nuevoUsuario);
@@ -124,14 +125,14 @@ const FormRegister = () => {
 
     emailjs
       .send(
-        "service_fqfe8ai", // SERVICE_ID
-        "template_5wmaenh", // TEMPLATE_ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // SERVICE_ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_REGISTER, // TEMPLATE_ID
         {
           user_name: data.userName,
           user_email: data.email,
           created_at: new Date().toLocaleString(),
         },
-        "BxYPU4ObJfPOSjVCp" //  PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY //  PUBLIC_KEY
       )
       .then((response) => {
         console.log("Correo enviado con éxito", response.status, response.text);
