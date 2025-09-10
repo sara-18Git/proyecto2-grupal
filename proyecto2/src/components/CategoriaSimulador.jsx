@@ -48,7 +48,7 @@ const CategoriaSimulador = () => {
     ));
   return (
     <div className="carruseles-container">
-      <h2 className="carruseles-heading">Categoria Pelea</h2>
+      <h2 className="carruseles-heading">Categoria Simulador</h2>
       <div className="h-100">
         <AliceCarousel
           mouseTracking
