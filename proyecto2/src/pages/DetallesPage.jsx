@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "../components/css/detalles.css";
 import { FaCircleExclamation } from "react-icons/fa6";
 const DetallesPage = () => {
   const { id } = useParams();
+  
   const [imagenPrincipal, setImagenPrincipal] = useState(0);
-  const productos = [
+  const juegos = [
     {
       id: 1,
       title: "STARDEW VALLEY",
@@ -25,6 +26,7 @@ const DetallesPage = () => {
       requisitos3: "2 GB RAM y 256 MB graphics card",
       medios: [
         {
+          id: 1,
           type: "image",
           url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiDPx9D_3JC7nxUs-KRqb1t1hgu16xd8Wks6AJ4cW7Y-qO9U0LZrStj0cThhMbgqJrybPS_zmwzyjzCjm39J4zLqBPugRFbSyUMutt2hmBBdbo6nm28eZNkP6LtAZX3bp9ak_2bY70lmcW/s1600/Stardew-Valley.jpg",
         },
@@ -410,8 +412,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
       detallesCompletos: `Tú encarnas al Caballero, un pequeño y misterioso guerrero silencioso que viaja a la ruinosa ciudad de Dirtmouth y desciende al vasto reino subterráneo de Hallownest. Este reino, una vez próspero, ha sido consumido por una plaga supernatural que enloquece a sus habitantes. Tu misión es explorar sus profundidades, desentrañar sus secretos y detener la fuente de la infección.`,
       desarrollador: "Team Cherry",
       fechaLanzamiento: " 24 de Febrero de 2017",
-      requisitos:
-        "SO: Windows 7 (64-bit),Procesador: Intel Core 2 Duo E5200",
+      requisitos: "SO: Windows 7 (64-bit),Procesador: Intel Core 2 Duo E5200",
       requisitos2: "Memoria: 4 GB de RAM",
       requisitos3: "Gráficos: GeForce 9800GTX+ (1GB)",
       medios: [
@@ -434,29 +435,36 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
         },
       ],
     },
-    
   ];
-  const navigate = useNavigate();
-   const handleIrA404 = () => {
-    navigate('/ruta-que-no-existe');
-  };
-  const producto = productos.find((item) => item.id === parseInt(id));
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
-  if (!producto) {
-    return (
-      <div className="container mt-5 text-center">Producto no encontrado</div>
-    );
+  const navigate = useNavigate();
+  const handleIrA404 = () => {
+    navigate("/ruta-que-no-existe");
+  };
+  const juego = juegos.find((item) => item.id === parseInt(id));
+
+  useEffect(() => {
+    if (!juego) {
+      navigate("/404", { replace: true });
+    }
+  }, [juego, navigate]);
+  if (!juego) {
+    return null;
   }
 
   const irAnterior = () => {
     setImagenPrincipal((prev) =>
-      prev === 0 ? producto.medios.length - 1 : prev - 1
+      prev === 0 ? juego.medios.length - 1 : prev - 1
     );
   };
 
   const irSiguiente = () => {
     setImagenPrincipal((prev) =>
-      prev === producto.medios.length - 1 ? 0 : prev + 1
+      prev === juego.medios.length - 1 ? 0 : prev + 1
     );
   };
 
@@ -491,7 +499,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
     768: { items: 4 },
   };
 
-  const renderizarMiniaturas = producto.medios.map((medio, indice) => (
+  const renderizarMiniaturas = juego.medios.map((medio, indice) => (
     <div
       key={indice}
       className={`miniatura-item ${indice === imagenPrincipal ? "active" : ""}`}
@@ -508,7 +516,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
       ) : (
         <img
           src={medio.url}
-          alt={`${producto.title} ${indice + 1}`}
+          alt={`${juego.title} ${indice + 1}`}
           className="w-100"
         />
       )}
@@ -516,7 +524,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
   ));
 
   const renderizarContenidoPrincipal = () => {
-    const medio = producto.medios[imagenPrincipal];
+    const medio = juego.medios[imagenPrincipal];
 
     if (medio.type === "video") {
       return (
@@ -525,7 +533,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
             width="100%"
             height="400"
             controls
-            className="reproductor-video"
+            className="rejuegor-video"
             style={{ backgroundColor: "#000", borderRadius: "8px" }}
           >
             <source src={medio.url} type="video/mp4" />
@@ -537,7 +545,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
       return (
         <img
           src={medio.url}
-          alt={producto.title}
+          alt={juego.title}
           className="img-fluid w-100 imagen-principal"
           style={{ height: "400px", objectFit: "cover", borderRadius: "8px" }}
         />
@@ -575,7 +583,7 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
                 responsive={carruselResponsive}
                 controlsStrategy="alternate"
                 disableDotsControls
-                disableButtonsControls={producto.medios.length <= 4}
+                disableButtonsControls={juego.medios.length <= 4}
                 renderPrevButton={() => (
                   <button className="btn btn-sm btn-outline-secondary btn-carrusel-anterior">
                     <i className="fas fa-chevron-left"></i>
@@ -590,25 +598,25 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
             </div>
           </div>
           <div className="col-md-6">
-            <h1 className="titulo-producto">{producto.title}</h1>
-            <h2 className="subtitulo h4  mb-3">{producto.title}</h2>
+            <h1 className="titulo-juego">{juego.title}</h1>
+            <h2 className="subtitulo h4  mb-3">{juego.title}</h2>
 
             <div className="d-flex align-items-center mb-3">
-              <span className="categoria badge me-3">{producto.category}</span>
+              <span className="categoria badge me-3">{juego.category}</span>
               <div className="calificacion">
-                {renderizarEstrellas(producto.rating)}
-                <span className="ms-2 text-black">({producto.rating})</span>
+                {renderizarEstrellas(juego.rating)}
+                <span className="ms-2 text-black">({juego.rating})</span>
               </div>
             </div>
 
             <div className="contenedor-precio mb-4 p-3  rounded">
-              <h2 className="textoPrecio mb-0">{producto.price}</h2>
+              <h2 className="textoPrecio mb-0">{juego.price}</h2>
             </div>
 
             <div className="contenedorDescripcion mb-4">
               <h5 className="tituloDescripcion">DESCRIPCIÓN</h5>
-              <p className="descripcion-producto text-light">
-                {producto.description}
+              <p className="descripcion-juego text-light">
+                {juego.description}
               </p>
             </div>
 
@@ -620,19 +628,22 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
               >
                 Comprar ahora
               </button>
-              <button className="botonDeseos btn text-light " onClick={handleIrA404}>
+              <button
+                className="botonDeseos btn text-light "
+                onClick={handleIrA404}
+              >
                 lista de deseos
               </button>
             </div>
 
-            <div className="info-producto p-3rounded">
+            <div className="info-juego p-3rounded">
               <div className="mb-2">
                 <strong>Desarrollador:</strong>
-                <span className="ms-2">{producto.desarrollador}</span>
+                <span className="ms-2">{juego.desarrollador}</span>
               </div>
               <div>
                 <strong>Fecha de lanzamiento:</strong>
-                <span className="ms-2">{producto.fechaLanzamiento}</span>
+                <span className="ms-2">{juego.fechaLanzamiento}</span>
               </div>
             </div>
           </div>
@@ -647,21 +658,21 @@ La historia sigue a Ichiban Kasuga (o "Ichi"), un peón de bajo rango de la yaku
                   className="descripcionCompleta"
                   style={{ whiteSpace: "pre-line" }}
                 >
-                  {producto.detallesCompletos}
+                  {juego.detallesCompletos}
                 </p>
 
                 <h5>Requisitos del sistema</h5>
                 <ul className="list-unstyled">
                   <li>
                     <FaCircleExclamation />
-                    {producto.requisitos}
+                    {juego.requisitos}
                   </li>
                   <li>
                     <FaCircleExclamation />
-                    {producto.requisitos2}
+                    {juego.requisitos2}
                   </li>
                   <li>
-                    <FaCircleExclamation /> {producto.requisitos3}
+                    <FaCircleExclamation /> {juego.requisitos3}
                   </li>
                 </ul>
               </div>

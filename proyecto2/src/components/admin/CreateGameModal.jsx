@@ -4,8 +4,8 @@ import { useState } from "react";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { agregarJuego, obtenerJuegos } from "../../services/juegos.services";
 
-
 export default function CreateGameModal({ alCerrar, alGuardar }) {
+  const generos = ["Accion", "Aventura", "Pelea", "Multijugador", "Simulador"];
   const [camposAdicionales, setCamposAdicionales] = useState({
     descripcion: "",
     imagen: "",
@@ -75,7 +75,14 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
   };
 
   return (
-    <Modal show onHide={alCerrar} backdrop="static" centered size="lg"   dialogClassName="modal-dark">
+    <Modal
+      show
+      onHide={alCerrar}
+      backdrop="static"
+      centered
+      size="lg"
+      dialogClassName="modal-dark"
+    >
       <Form onSubmit={handleSubmit(alEnviar)}>
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Juego</Modal.Title>
@@ -90,6 +97,11 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               {...register("title", {
                 required: "El título es obligatorio",
                 minLength: { value: 3, message: "Mínimo 3 caracteres" },
+                maxLength: {
+                  value: 35,
+                  message:
+                    "llego a la cantidad maxima de caracteres permitidos",
+                },
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -101,10 +113,13 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
             <Form.Label>Descripción</Form.Label>
             <Form.Control
               as="textarea"
+              maxLength={114}
               rows={3}
               placeholder="Descripción del juego"
               value={camposAdicionales.descripcion}
-              onChange={(evento) => handleCampoChange("descripcion", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("descripcion", evento.target.value)
+              }
             />
           </Form.Group>
 
@@ -114,7 +129,9 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               type="url"
               placeholder="https://ejemplo.com/imagen.jpg"
               value={camposAdicionales.imagen}
-              onChange={(evento) => handleCampoChange("imagen", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("imagen", evento.target.value)
+              }
             />
             {camposAdicionales.imagen && (
               <div className="mt-2">
@@ -135,13 +152,20 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Género</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Ej: Acción, Aventura, RPG"
+            <Form.Label>Categoria</Form.Label>
+            <Form.Select
               value={camposAdicionales.genero}
-              onChange={(evento) => handleCampoChange("genero", evento.target.value)}
-            />
+              onChange={(evento) =>
+                handleCampoChange("genero", evento.target.value)
+              }
+            >
+              <option value="">Selecciona un género</option>
+              {generos.map((genero, index) => (
+                <option key={index} value={genero}>
+                  {genero}
+                </option>
+              ))}
+            </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -150,7 +174,9 @@ export default function CreateGameModal({ alCerrar, alGuardar }) {
               type="text"
               placeholder="Ej: $1000ARS, GRATIS"
               value={camposAdicionales.precio}
-              onChange={(evento) => handleCampoChange("precio", evento.target.value)}
+              onChange={(evento) =>
+                handleCampoChange("precio", evento.target.value)
+              }
             />
           </Form.Group>
         </Modal.Body>
