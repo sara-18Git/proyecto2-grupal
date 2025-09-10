@@ -39,11 +39,11 @@ const ContactPage = () => {
 
     setLoading(true);
     setErrors({});
-
+    
     emailjs
       .send(
-        "service_fqfe8ai", //  SERVICE_ID
-        "template_p1g3913", //  TEMPLATE_ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, //  SERVICE_ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT, //  TEMPLATE_ID
         {
           user_name: formData.nombre,
           user_email: formData.email,
@@ -51,7 +51,7 @@ const ContactPage = () => {
           message: formData.mensaje,
           created_at: new Date().toLocaleString(),
         },
-        "BxYPU4ObJfPOSjVCp" // PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // PUBLIC_KEY
       )
       .then((response) => {
         console.log("Correo enviado con éxito", response.status, response.text);

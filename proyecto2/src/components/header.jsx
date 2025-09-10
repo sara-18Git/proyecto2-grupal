@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar, Button, Form } from "react-bootstrap";
-import { FaSearch, FaSignInAlt, FaShoppingCart } from "react-icons/fa";
-import { IoIosContacts } from "react-icons/io";
+import { FaSignInAlt, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import LogoNav from "../assets/logo.png";
 import "../components/css/header.css";
@@ -94,7 +93,7 @@ const Header = () => {
                 {user.email === "saraabigailrobles9@gmail.com" && (
                   <Nav.Link as={NavLink} to="/admin">
                     <div className="my-icon mb-0">
-                      <IoIosContacts className="icono-detaills" /> Admin
+                      <FaUserShield className="icono-detaills" /> Admin
                     </div>
                   </Nav.Link>
                 )}

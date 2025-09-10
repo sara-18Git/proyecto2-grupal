@@ -78,6 +78,38 @@ const formLogin = () => {
       reset();
       return;
     }
+
+    if (usuario.estado == "pendiente") {
+      Swal.fire({
+        icon: "warning",
+        title: "Usuario pendiente",
+        text: "El usuario todavía no ha sido aprobado",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
+      });
+      reset();
+      return;
+    }
+
+    if (usuario.estado == "suspendido") {
+      Swal.fire({
+        icon: "warning",
+        title: "Usuario Suspendido",
+        text: "El usuario ha sido suspendido",
+        iconColor: "#042550ff",
+        confirmButtonColor: "#042550ff",
+        cancelButtonColor: "#d33",
+        customClass: {
+          popup: "small-alert",
+        },
+      });
+      reset();
+      return;
+    }
     const usuarioLogueado = {
       email: data.email,
       loginAt: new Date().toISOString(),
