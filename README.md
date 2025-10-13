@@ -4,11 +4,11 @@
 Permite explorar, descubrir y visualizar información sobre distintos juegos, brindando una experiencia rápida e intuitiva para los usuarios.
 --
 ## integrantes:
-*Sara abigail Robles(Scrum Master y dueña del repositorio)
-*Amelia Antoni
-*Sergio Damian Osores (Scrum Master)
-*Facundo carlos Mamani
-*Felipe Isaias Marrone
+* Sara abigail Robles(Scrum Master y dueña del repositorio)
+* Amelia Antoni
+* Sergio Damian Osores (Scrum Master)
+* Facundo carlos Mamani
+* Felipe Isaias Marrone
 
 ---
 
