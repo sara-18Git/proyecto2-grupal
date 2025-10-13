@@ -1,5 +1,5 @@
 # 🎮 GameHub
-<span style="color:red">DISCLAIMER,este proyecto no cuenta con backend</span>
+<span style="color:red"> DISCLAIMER,este proyecto no cuenta con backend </span>
 **GameHub** es una página web de videojuegos creada con **React**.  
 Permite explorar, descubrir y visualizar información sobre distintos juegos, brindando una experiencia rápida e intuitiva para los usuarios.
 
@@ -24,9 +24,9 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 - 🧭 Navegación dinámica entre páginas sin recargar la app.  
 
 ---
-#pagina web
+# pagina web
 https://gamehub-modulo2.netlify.app/
 ---
-##instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
+## instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
 
 
