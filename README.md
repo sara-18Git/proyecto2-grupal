@@ -2,6 +2,13 @@
 <span style="color:red"> DISCLAIMER,este proyecto no cuenta con backend </span>
 **GameHub** es una página web de videojuegos creada con **React**.  
 Permite explorar, descubrir y visualizar información sobre distintos juegos, brindando una experiencia rápida e intuitiva para los usuarios.
+--
+## integrantes:
+*Sara abigail Robles(Scrum Master y dueña del repositorio)
+*Amelia Antoni
+*Sergio Damian Osores (Scrum Master)
+*Facundo carlos Mamani
+*Felipe Isaias Marrone
 
 ---
 
