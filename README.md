@@ -26,7 +26,8 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 ---
 # pagina web
 https://gamehub-modulo2.netlify.app/
----
+--
 ## instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
+. primero registrase con este gmail: ## saraabigailrobles9@gmail.com ## y la contraseña puede ser cualquiera,despues logearse y ahi recien podra ver el CRUD
 
 
