@@ -1,5 +1,6 @@
 # 🎮 GameHub
 ***DISCLAIMER,este proyecto no cuenta con backend***
+-
 **GameHub** es una página web de videojuegos creada con **React**.  
 Permite explorar, descubrir y visualizar información sobre distintos juegos, brindando una experiencia rápida e intuitiva para los usuarios.
 --
