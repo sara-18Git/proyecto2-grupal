@@ -18,7 +18,7 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 
 - ⚛️ **React** — Librería principal para la construcción de la interfaz.  
 - 📦 **npm** — Sistema de gestión de paquetes para instalar dependencias.  
-- 🎨 **CSS / Tailwind / Bootstrap** (según el estilo que uses) — Estilos y diseño responsivo.  
+- 🎨 **CSS/ Bootstrap** — Estilos y diseño responsivo.  
 - 🌐 **React Router DOM** — Navegación entre páginas.  
 - 🧠 **useState / useEffect** — Manejo de estados y efectos en los componentes.  
 
@@ -26,17 +26,21 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 
 ## 🧩 Características principales
 
-- 🔍 Catálogo de videojuegos con información detallada.  
-- 🕹️ Sistema de filtrado o búsqueda por título o categoría.  
+- 🔍 Catálogo de videojuegos con información detallada.   
 - ⭐ Sección de juegos destacados o recomendados.  
 - 📖 Página de detalles con descripción, imágenes y calificaciones.  
 - 🧭 Navegación dinámica entre páginas sin recargar la app.  
 
 ---
+## instruciones de como instalar el proyecto
+* 1 hacer **Git clone https://github.com/sara-18Git/proyecto2-grupal.git**
+* 2 usar Npm install
+***fin de la instruccion de como inicializar el proyecto***
+  -
 # pagina web
 https://gamehub-modulo2.netlify.app/
 --
-## instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
+#instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
 . primero registrase con este gmail: **saraabigailrobles9@gmail.com**y la contraseña puede ser cualquiera,despues logearse y ahi recien podra ver el CRUD
 
 
