@@ -5,11 +5,11 @@
 Permite explorar, descubrir y visualizar información sobre distintos juegos, brindando una experiencia rápida e intuitiva para los usuarios.
 --
 ## integrantes:
-* Sara abigail Robles(Scrum Master y dueña del repositorio)**usuario de git:@sara-18Git**
-* Amelia Antoni**usuario de git:@Amelia-0705**
-* Sergio Damian Osores (Scrum Master)**usuario de git:@damian0381**
-* Facundo carlos Mamani**usuario de git:@Facundoo2015**
-* Felipe Isaias Marrone**usuario de git:@Melisa07732**
+* Sara abigail Robles(Scrum Master y dueña del repositorio) **usuario de git:@sara-18Git**
+* Amelia Antoni **usuario de git:@Amelia-0705**
+* Sergio Damian Osores (Scrum Master) **usuario de git:@damian0381**
+* Facundo carlos Mamani **usuario de git:@Facundoo2015**
+* Felipe Isaias Marrone **usuario de git:@Melisa07732**
 * Melisa Jimenez **usuario de git:@Feli15**
 
 ---
