@@ -15,7 +15,8 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 ---
 ## instruciones de como instalar el proyecto
 * 1 hacer **Git clone https://github.com/sara-18Git/proyecto2-grupal.git**
-* 2 usar Npm install ***fin de la instruccion de como inicializar el proyecto***
+* 2 usar Npm install 
+* ***fin de la instruccion de como inicializar el proyecto***
   -
 # pagina web
 https://gamehub-modulo2.netlify.app/
