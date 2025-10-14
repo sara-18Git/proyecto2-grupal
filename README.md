@@ -13,7 +13,16 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 * Melisa Jimenez **usuario de git:@Feli15**
 
 ---
-
+## instruciones de como instalar el proyecto
+* 1 hacer **Git clone https://github.com/sara-18Git/proyecto2-grupal.git**
+* 2 usar Npm install ***fin de la instruccion de como inicializar el proyecto***
+  -
+# pagina web
+https://gamehub-modulo2.netlify.app/
+--
+#instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
+. primero registrase con este gmail: **saraabigailrobles9@gmail.com**y la contraseña puede ser cualquiera,despues logearse y ahi recien podra ver el CRUD
+---
 ## 🚀 Tecnologías utilizadas
 
 - ⚛️ **React** — Librería principal para la construcción de la interfaz.  
@@ -31,16 +40,5 @@ Permite explorar, descubrir y visualizar información sobre distintos juegos, br
 - 📖 Página de detalles con descripción, imágenes y calificaciones.  
 - 🧭 Navegación dinámica entre páginas sin recargar la app.  
 
----
-## instruciones de como instalar el proyecto
-* 1 hacer **Git clone https://github.com/sara-18Git/proyecto2-grupal.git**
-* 2 usar Npm install
-***fin de la instruccion de como inicializar el proyecto***
-  -
-# pagina web
-https://gamehub-modulo2.netlify.app/
---
-#instrucciones de como ingresar a todas las opciones q ofrece este proyecto(crud)
-. primero registrase con este gmail: **saraabigailrobles9@gmail.com**y la contraseña puede ser cualquiera,despues logearse y ahi recien podra ver el CRUD
 
 
